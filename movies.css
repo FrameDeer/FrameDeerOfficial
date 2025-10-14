@@ -220,9 +220,65 @@ a:hover {
 
 /* General container */
 .container {
-  max-width: 1400px; /* Increased for more cards */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  /* Adjust logo and title for mobile */
+  .logo-title-container {
+    gap: 0.5rem;
+  }
+  
+  .nav-logo-img {
+    height: 35px;
+  }
+  
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+  
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-nav-links li a {
+    font-size: 1.25rem;
+  }
+  
+  .close-menu {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .nav-logo-img {
+    height: 30px;
+  }
+  
+  .nav-logo {
+    font-size: 1.1rem;
+  }
 }
 
 /* Latest Reviews Section */
