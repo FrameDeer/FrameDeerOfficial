@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGJEB1784P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NGJEB1784P');
+  </script>
+
+    <!-- Favicon -->
+  <link rel="icon" href="/assets/logo/framedeer.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus - Actors & Directors Profiles | FrameDeer</title>
+  <meta name="description" content="Explore comprehensive profiles of actors and directors. Browse through 100+ film industry professionals with detailed career information and filmography.">
+  <meta name="keywords" content="actors, directors, film industry, Hollywood, cinema, profiles, filmography, Leonardo DiCaprio, Martin Scorsese, Christopher Nolan">
+  <link rel="stylesheet" href="focus.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo-title-container">
+        <a href="/index.html" class="logo-link">
+          <img src="/assets/logo/framedeer.png" alt="FrameDeer Logo - Movie Reviews and Ratings" class="nav-logo-img">
+        </a>
+        <a href="/index.html" class="nav-logo">FrameDeer</a>
+      </div>  
+      
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/movies.html">Movies</a></li>
+        <li><a href="/series.html">Series</a></li>
+        <li><a href="/focus.html">Focus</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/tournament.html">Tournament</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+        <span class="menu-line menu-line-1"></span>
+        <span class="menu-line menu-line-2"></span>
+        <span class="menu-line menu-line-3"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close mobile menu">
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/movies.html">Movies</a></li>
+      <li><a href="/series.html">Series</a></li>
+      <li><a href="/focus.html">Focus</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/tournament.html">Tournament</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </div>
+
+  <main class="container">
+    <!-- Header -->
+    <header class="page-header">
+      <h1>Focus</h1>
+      <p>Dive deep into the careers and artistry of the actors and directors who shape cinema. Explore comprehensive profiles, career highlights, and their contributions to film.</p>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search actors and directors..." class="search-input">
+        <button id="clearSearch" class="clear-search" aria-label="Clear search">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="actor">Actors</button>
+      <button class="tab" data-filter="director">Directors</button>
+    </div>
+    
+    <!-- Profiles Grid -->
+    <section id="profilesGrid" class="profiles-grid" aria-live="polite">
+      <!-- Profiles will be rendered by JavaScript -->
+    </section>
+
+    <!-- Load More Button -->
+    <div id="loadMoreContainer" class="load-more-container" style="display: none;">
+      <button id="loadMoreBtn" class="btn-primary load-more-btn">
+        <span>Load More</span>
+        <i class="fas fa-chevron-down"></i>
+      </button>
+      <div id="resultsCount" class="results-count"></div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Social Media Section -->
+        <div class="footer-social">
+          <h4>Follow FrameDeer</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/framedeer" aria-label="Follow FrameDeer on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/FrameDeer" aria-label="Follow FrameDeer on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@FrameDeer" aria-label="Follow FrameDeer on YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Simple Legal Links -->
+        <div class="footer-legal">
+          <a href="/Docs/DISCLAIMER.pdf">Disclaimer</a>
+          <span>•</span>
+          <a href="/Docs/PRIVACY POLICY DOCUMENT.pdf">Privacy</a>
+        </div>
+        
+        <!-- Attribution Section -->
+        <div class="footer-attribution">
+          <p>This site uses information from IMDb, Letterboxd, Wikipedia, and other public sources for educational purposes under Fair Use.</p>
+          <p>All trademarks belong to their respective owners. No copyright infringement intended.</p>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> FrameDeer - Use For Educational Purposes</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Profile Data
+    const sampleProfiles = [
+      {
+        id: "leonardodicaprio",
+        name: "Leonardo DiCaprio",
+        image: "/assets/FocusImages/leonardodicaprio.png",
+        type: "actor",
+        role: "Actor • 35+ films",
+        href: "/ActorReviews/leonardodicaprio.html"
+      },
+      {
+        id: "margotrobbie",
+        name: "Margot Robbie",
+        image: "/assets/FocusImages/margotrobbie.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/margotrobbie.html"
+      },
+      {
+        id: "christianbale",
+        name: "Christian Bale",
+        image: "/assets/FocusImages/christianbale.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/christianbale.html"
+      },
+      {
+        id: "woodyharrelson",
+        name: "Woody Harrelson",
+        image: "/assets/FocusImages/woodyharrelson.png",
+        type: "actor",
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/woodyharrelson.html"
+      },
+      {
+        id: "emmastone",
+        name: "Emma Stone",
+        image: "/assets/FocusImages/emmastone.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/emmastone.html"
+      },
+      {
+        id: "emmawatson",
+        name: "Emma Watson",
+        image: "/assets/FocusImages/emmawatson.png",
+        type: "actor",
+        role: "Actor • 25+ films",
+        href: "/ActorReviews/emmawatson.html"
+      },
+      {
+        id: "morganfreeman",
+        name: "Morgan Freeman",
+        image: "/assets/FocusImages/morganfreeman.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/morganfreeman.html"
+      },
+      {
+        id: "markruffalo",
+        name: "Mark Ruffalo",
+        image: "/assets/FocusImages/markruffalo.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/markruffalo.html"
+      },
+      {
+        id: "matthewmcconaughey",
+        name: "Matthew McConaughey",
+        image: "/assets/FocusImages/matthewmcconaughey.png",
+        type: "actor",
+        role: "Actor • 45+ films",
+        href: "/ActorReviews/matthewmcconaughey.html"
+      },
+      {
+        id: "tomcruise",
+        name: "Tom Cruise",
+        image: "/assets/FocusImages/tomcruise.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/tomcruise.html"
+      },
+      {
+        id: "tomhanks",
+        name: "Tom Hanks",
+        image: "/assets/FocusImages/tomhanks.png",
+        type: "actor",
+        role: "Actor • 80+ films",
+        href: "/ActorReviews/tomhanks.html"
+      },
+      {
+        id: "willsmith",
+        name: "Will Smith",
+        image: "/assets/FocusImages/willsmith.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/willsmith.html"
+      },
+      {
+        id: "christophernolan",
+        name: "Christopher Nolan",
+        image: "/assets/FocusImages/christophernolan.png",
+        type: "director",
+        role: "Director • 12 films",
+        href: "/DirectorReviews/christophernolan.html"
+      },
+      {
+        id: "martinscorsese",
+        name: "Martin Scorsese",
+        image: "/assets/FocusImages/martinscorsese.png",
+        type: "director",
+        role: "Director • 25+ films",
+        href: "/DirectorReviews/martinscorsese.html"
+      },
+      {
+        id: "quentintarantino",
+        name: "Quentin Tarantino",
+        image: "/assets/FocusImages/quentintarantino.png",
+        type: "director",
+        role: "Director • 10 films",
+        href: "/DirectorReviews/quentintarantino.html"
+      },
+      {
+        id: "robertdowneyjr",
+        name: "Robert Downey Jr.",
+        image: "/assets/FocusImages/robertdowneyjr.png",
+        type: "actor",
+        role: "Actor • 80+ films",
+        href: "/ActorReviews/robertdowneyjr.html"
+      },
+      {
+        id: "scarlettjohansson",
+        name: "Scarlett Johansson",
+        image: "/assets/FocusImages/scarlettjohansson.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/scarlettjohansson.html"
+      },
+      {
+        id: "bradpitt",
+        name: "Brad Pitt",
+        image: "/assets/FocusImages/bradpitt.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/bradpitt.html"
+      },
+      {
+        id: "merylstreep",
+        name: "Meryl Streep",
+        image: "/assets/FocusImages/merylstreep.png",
+        type: "actor",
+        role: "Actor • 80+ films",
+        href: "/ActorReviews/merylstreep.html"
+      },
+      {
+        id: "denzelwashington",
+        name: "Denzel Washington",
+        image: "/assets/FocusImages/denzelwashington.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/denzelwashington.html"
+      },
+      {
+        id: "johnnydepp",
+        name: "Johnny Depp",
+        image: "/assets/FocusImages/johnnydepp.png",
+        type: "actor",
+        role: "Actor • 90+ films",
+        href: "/ActorReviews/johnnydepp.html"
+      },
+      {
+        id: "jenniferlawrence",
+        name: "Jennifer Lawrence",
+        image: "/assets/FocusImages/jenniferlawrence.png",
+        type: "actor",
+        role: "Actor • 25+ films",
+        href: "/ActorReviews/jenniferlawrence.html"
+      },
+      {
+        id: "danieldaylewis",
+        name: "Daniel Day-Lewis",
+        image: "/assets/FocusImages/danieldaylewis.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/danieldaylewis.html"
+      },
+      {
+        id: "cateblanchett",
+        name: "Cate Blanchett",
+        image: "/assets/FocusImages/cateblanchett.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/cateblanchett.html"
+      },
+      {
+        id: "alpacino",
+        name: "Al Pacino",
+        image: "/assets/FocusImages/alpacino.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/alpacino.html"
+      },
+      {
+        id: "robertdeniro",
+        name: "Robert De Niro",
+        image: "/assets/FocusImages/robertdeniro.png",
+        type: "actor",
+        role: "Actor • 120+ films",
+        href: "/ActorReviews/robertdeniro.html"
+      },
+      {
+        id: "jacknicholson",
+        name: "Jack Nicholson",
+        image: "/assets/FocusImages/jacknicholson.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/jacknicholson.html"
+      },
+      {
+        id: "anthonyhopkins",
+        name: "Anthony Hopkins",
+        image: "/assets/FocusImages/anthonyhopkins.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/anthonyhopkins.html"
+      },
+      {
+        id: "katewinslet",
+        name: "Kate Winslet",
+        image: "/assets/FocusImages/katewinslet.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/katewinslet.html"
+      },
+      {
+        id: "samuelljackson",
+        name: "Samuel L. Jackson",
+        image: "/assets/FocusImages/samuelljackson.png",
+        type: "actor",
+        role: "Actor • 150+ films",
+        href: "/ActorReviews/samuelljackson.html"
+      },
+      {
+        id: "stevenspielberg",
+        name: "Steven Spielberg",
+        image: "/assets/FocusImages/stevenspielberg.png",
+        type: "director",
+        role: "Director • 30+ films",
+        href: "/DirectorReviews/stevenspielberg.html"
+      },
+      {
+        id: "jamescameron",
+        name: "James Cameron",
+        image: "/assets/FocusImages/jamescameron.png",
+        type: "director",
+        role: "Director • 10+ films",
+        href: "/DirectorReviews/jamescameron.html"
+      },
+      {
+        id: "timburton",
+        name: "Tim Burton",
+        image: "/assets/FocusImages/timburton.png",
+        type: "director",
+        role: "Director • 20+ films",
+        href: "/DirectorReviews/timburton.html"
+      },
+      {
+        id: "davidfincher",
+        name: "David Fincher",
+        image: "/assets/FocusImages/davidfincher.png",
+        type: "director",
+        role: "Director • 11 films",
+        href: "/DirectorReviews/davidfincher.html"
+      },
+      {
+        id: "wesanderson",
+        name: "Wes Anderson",
+        image: "/assets/FocusImages/wesanderson.png",
+        type: "director",
+        role: "Director • 11 films",
+        href: "/DirectorReviews/wesanderson.html"
+      },
+      {
+        id: "stanleykubrick",
+        name: "Stanley Kubrick",
+        image: "/assets/FocusImages/stanleykubrick.png",
+        type: "director",
+        role: "Director • 13 films",
+        href: "/DirectorReviews/stanleykubrick.html"
+      },
+      {
+        id: "francisfordcoppola",
+        name: "Francis Ford Coppola",
+        image: "/assets/FocusImages/francisfordcoppola.png",
+        type: "director",
+        role: "Director • 20+ films",
+        href: "/DirectorReviews/francisfordcoppola.html"
+      },
+      {
+        id: "alfredhitchcock",
+        name: "Alfred Hitchcock",
+        image: "/assets/FocusImages/alfredhitchcock.png",
+        type: "director",
+        role: "Director • 50+ films",
+        href: "/DirectorReviews/alfredhitchcock.html"
+      },
+      {
+        id: "ridleyscott",
+        name: "Ridley Scott",
+        image: "/assets/FocusImages/ridleyscott.png",
+        type: "director",
+        role: "Director • 25+ films",
+        href: "/DirectorReviews/ridleyscott.html"
+      },
+      {
+        id: "peterjackson",
+        name: "Peter Jackson",
+        image: "/assets/FocusImages/peterjackson.png",
+        type: "director",
+        role: "Director • 15+ films",
+        href: "/DirectorReviews/peterjackson.html"
+      },
+      {
+        id: "nicolekidman",
+        name: "Nicole Kidman",
+        image: "/assets/FocusImages/nicolekidman.png",
+        type: "actor",
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/nicolekidman.html"
+      },
+      {
+        id: "russellcrowe",
+        name: "Russell Crowe",
+        image: "/assets/FocusImages/russellcrowe.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/russellcrowe.html"
+      },
+      {
+        id: "mattdamon",
+        name: "Matt Damon",
+        image: "/assets/FocusImages/mattdamon.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/mattdamon.html"
+      },
+      {
+        id: "georgeclooney",
+        name: "George Clooney",
+        image: "/assets/FocusImages/georgeclooney.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/georgeclooney.html"
+      },
+      {
+        id: "juliaroberts",
+        name: "Julia Roberts",
+        image: "/assets/FocusImages/juliaroberts.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/juliaroberts.html"
+      },
+      {
+        id: "charlizetheron",
+        name: "Charlize Theron",
+        image: "/assets/FocusImages/charlizetheron.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/charlizetheron.html"
+      },
+      {
+        id: "keanureeves",
+        name: "Keanu Reeves",
+        image: "/assets/FocusImages/keanureeves.png",
+        type: "actor",
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/keanureeves.html"
+      },
+      {
+        id: "natalieportman",
+        name: "Natalie Portman",
+        image: "/assets/FocusImages/natalieportman.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/natalieportman.html"
+      },
+      {
+        id: "hughjackman",
+        name: "Hugh Jackman",
+        image: "/assets/FocusImages/hughjackman.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/hughjackman.html"
+      },
+      {
+        id: "angelinajolie",
+        name: "Angelina Jolie",
+        image: "/assets/FocusImages/angelinajolie.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/angelinajolie.html"
+      },
+      {
+        id: "robertpattinson",
+        name: "Robert Pattinson",
+        image: "/assets/FocusImages/robertpattinson.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/robertpattinson.html"
+      },
+      {
+        id: "annehathaway",
+        name: "Anne Hathaway",
+        image: "/assets/FocusImages/annehathaway.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/annehathaway.html"
+      },
+      {
+        id: "jakegyllenhaal",
+        name: "Jake Gyllenhaal",
+        image: "/assets/FocusImages/jakegyllenhaal.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/jakegyllenhaal.html"
+      },
+      {
+        id: "ryangosling",
+        name: "Ryan Gosling",
+        image: "/assets/FocusImages/ryangosling.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/ryangosling.html"
+      },
+      {
+        id: "michaelfassbender",
+        name: "Michael Fassbender",
+        image: "/assets/FocusImages/michaelfassbender.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/michaelfassbender.html"
+      },
+      {
+        id: "violadavis",
+        name: "Viola Davis",
+        image: "/assets/FocusImages/violadavis.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/violadavis.html"
+      },
+      {
+        id: "liamneeson",
+        name: "Liam Neeson",
+        image: "/assets/FocusImages/liamneeson.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/liamneeson.html"
+      },
+      {
+        id: "garyoldman",
+        name: "Gary Oldman",
+        image: "/assets/FocusImages/garyoldman.png",
+        type: "actor",
+        role: "Actor • 80+ films",
+        href: "/ActorReviews/garyoldman.html"
+      },
+      {
+        id: "jessicachastain",
+        name: "Jessica Chastain",
+        image: "/assets/FocusImages/jessicachastain.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/jessicachastain.html"
+      },
+      {
+        id: "benedictcumberbatch",
+        name: "Benedict Cumberbatch",
+        image: "/assets/FocusImages/benedictcumberbatch.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/benedictcumberbatch.html"
+      },
+      {
+        id: "clinteastwood",
+        name: "Clint Eastwood",
+        image: "/assets/FocusImages/clinteastwood.png",
+        type: "actor",
+        role: "Actor/Director • 50+ films",
+        href: "/ActorReviews/clinteastwood.html"
+      },
+      {
+        id: "harrisonford",
+        name: "Harrison Ford",
+        image: "/assets/FocusImages/harrisonford.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/harrisonford.html"
+      },
+      {
+        id: "sigourneyweaver",
+        name: "Sigourney Weaver",
+        image: "/assets/FocusImages/sigourneyweaver.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/sigourneyweaver.html"
+      },
+      {
+        id: "joaquinphoenix",
+        name: "Joaquin Phoenix",
+        image: "/assets/FocusImages/joaquinphoenix.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/joaquinphoenix.html"
+      },
+      {
+        id: "amyadams",
+        name: "Amy Adams",
+        image: "/assets/FocusImages/amyadams.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/amyadams.html"
+      },
+      {
+        id: "ethanhawke",
+        name: "Ethan Hawke",
+        image: "/assets/FocusImages/ethanhawke.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/ethanhawke.html"
+      },
+      {
+        id: "tildaswinton",
+        name: "Tilda Swinton",
+        image: "/assets/FocusImages/tildaswinton.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/tildaswinton.html"
+      },
+      {
+        id: "willemdafoe",
+        name: "Willem Dafoe",
+        image: "/assets/FocusImages/willemdafoe.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/willemdafoe.html"
+      },
+      {
+        id: "juliannemoore",
+        name: "Julianne Moore",
+        image: "/assets/FocusImages/juliannemoore.png",
+        type: "actor",
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/juliannemoore.html"
+      },
+      {
+        id: "stevecarell",
+        name: "Steve Carell",
+        image: "/assets/FocusImages/stevecarell.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/stevecarell.html"
+      },
+      {
+        id: "coenbrothers",
+        name: "Coen Brothers",
+        image: "/assets/FocusImages/coenbrothers.png",
+        type: "director",
+        role: "Directors • 18 films",
+        href: "/DirectorReviews/coenbrothers.html"
+      },
+      {
+        id: "darrenaronofsky",
+        name: "Darren Aronofsky",
+        image: "/assets/FocusImages/darrenaronofsky.png",
+        type: "director",
+        role: "Director • 8 films",
+        href: "/DirectorReviews/darrenaronofsky.html"
+      },
+      {
+        id: "paulthomasanderson",
+        name: "Paul Thomas Anderson",
+        image: "/assets/FocusImages/paulthomasanderson.png",
+        type: "director",
+        role: "Director • 9 films",
+        href: "/DirectorReviews/paulthomasanderson.html"
+      },
+      {
+        id: "guillermodeltoro",
+        name: "Guillermo del Toro",
+        image: "/assets/FocusImages/guillermodeltoro.png",
+        type: "director",
+        role: "Director • 12 films",
+        href: "/DirectorReviews/guillermodeltoro.html"
+      },
+      {
+        id: "denisvilleneuve",
+        name: "Denis Villeneuve",
+        image: "/assets/FocusImages/denisvilleneuve.png",
+        type: "director",
+        role: "Director • 10+ films",
+        href: "/DirectorReviews/denisvilleneuve.html"
+      },
+      {
+        id: "akirakurosawa",
+        name: "Akira Kurosawa",
+        image: "/assets/FocusImages/akirakurosawa.png",
+        type: "director",
+        role: "Director • 30 films",
+        href: "/DirectorReviews/akirakurosawa.html"
+      },
+      {
+        id: "hayaomiyazaki",
+        name: "Hayao Miyazaki",
+        image: "/assets/FocusImages/hayaomiyazaki.png",
+        type: "director",
+        role: "Director • 11 films",
+        href: "/DirectorReviews/hayaomiyazaki.html"
+      },
+      {
+        id: "johnford",
+        name: "John Ford",
+        image: "/assets/FocusImages/johnford.png",
+        type: "director",
+        role: "Director • 140+ films",
+        href: "/DirectorReviews/johnford.html"
+      },
+      {
+        id: "billywilder",
+        name: "Billy Wilder",
+        image: "/assets/FocusImages/billywilder.png",
+        type: "director",
+        role: "Director • 25+ films",
+        href: "/DirectorReviews/billywilder.html"
+      },
+      {
+        id: "orsonwelles",
+        name: "Orson Welles",
+        image: "/assets/FocusImages/orsonwelles.png",
+        type: "director",
+        role: "Director • 15+ films",
+        href: "/DirectorReviews/orsonwelles.html"
+      },
+      {
+        id: "michaelmann",
+        name: "Michael Mann",
+        image: "/assets/FocusImages/michaelmann.png",
+        type: "director",
+        role: "Director • 11 films",
+        href: "/DirectorReviews/michaelmann.html"
+      },
+      {
+        id: "briandepalma",
+        name: "Brian De Palma",
+        image: "/assets/FocusImages/briandepalma.png",
+        type: "director",
+        role: "Director • 30+ films",
+        href: "/DirectorReviews/briandepalma.html"
+      },
+      {
+        id: "romanpolanski",
+        name: "Roman Polanski",
+        image: "/assets/FocusImages/romanpolanski.png",
+        type: "director",
+        role: "Director • 20+ films",
+        href: "/DirectorReviews/romanpolanski.html"
+      },
+      {
+        id: "johncarpenter",
+        name: "John Carpenter",
+        image: "/assets/FocusImages/johncarpenter.png",
+        type: "director",
+        role: "Director • 20+ films",
+        href: "/DirectorReviews/johncarpenter.html"
+      },
+      {
+        id: "davidlynch",
+        name: "David Lynch",
+        image: "/assets/FocusImages/davidlynch.png",
+        type: "director",
+        role: "Director • 10 films",
+        href: "/DirectorReviews/davidlynch.html"
+      },
+      {
+        id: "spikelee",
+        name: "Spike Lee",
+        image: "/assets/FocusImages/spikelee.png",
+        type: "director",
+        role: "Director • 25+ films",
+        href: "/DirectorReviews/spikelee.html"
+      },
+      {
+        id: "kathrynbigelow",
+        name: "Kathryn Bigelow",
+        image: "/assets/FocusImages/kathrynbigelow.png",
+        type: "director",
+        role: "Director • 10+ films",
+        href: "/DirectorReviews/kathrynbigelow.html"
+      },
+      {
+        id: "sofiacoppola",
+        name: "Sofia Coppola",
+        image: "/assets/FocusImages/sofiacoppola.png",
+        type: "director",
+        role: "Director • 8 films",
+        href: "/DirectorReviews/sofiacoppola.html"
+      },
+      {
+        id: "gretagerwig",
+        name: "Greta Gerwig",
+        image: "/assets/FocusImages/gretagerwig.png",
+        type: "director",
+        role: "Director • 3 films",
+        href: "/DirectorReviews/gretagerwig.html"
+      },
+      {
+        id: "jordanpeele",
+        name: "Jordan Peele",
+        image: "/assets/FocusImages/jordanpeele.png",
+        type: "director",
+        role: "Director • 3 films",
+        href: "/DirectorReviews/jordanpeele.html"
+      },
+      {
+        id: "alejandroginarritu",
+        name: "Alejandro G. Iñárritu",
+        image: "/assets/FocusImages/alejandroginarritu.png",
+        type: "director",
+        role: "Director • 8 films",
+        href: "/DirectorReviews/alejandroginarritu.html"
+      },
+      {
+        id: "pedroalmodovar",
+        name: "Pedro Almodóvar",
+        image: "/assets/FocusImages/pedroalmodovar.png",
+        type: "director",
+        role: "Director • 20+ films",
+        href: "/DirectorReviews/pedroalmodovar.html"
+      },
+      {
+        id: "wongkarwai",
+        name: "Wong Kar-wai",
+        image: "/assets/FocusImages/wongkarwai.png",
+        type: "director",
+        role: "Director • 10 films",
+        href: "/DirectorReviews/wongkarwai.html"
+      },
+      {
+        id: "bongjoonho",
+        name: "Bong Joon-ho",
+        image: "/assets/FocusImages/bongjoonho.png",
+        type: "director",
+        role: "Director • 7 films",
+        href: "/DirectorReviews/bongjoonho.html"
+      },
+      {
+        id: "parkchanwook",
+        name: "Park Chan-wook",
+        image: "/assets/FocusImages/parkchanwook.png",
+        type: "director",
+        role: "Director • 10+ films",
+        href: "/DirectorReviews/parkchanwook.html"
+      },
+      {
+        id: "satyajitray",
+        name: "Satyajit Ray",
+        image: "/assets/FocusImages/satyajitray.png",
+        type: "director",
+        role: "Director • 36 films",
+        href: "/DirectorReviews/satyajitray.html"
+      },
+      {
+        id: "federicofellini",
+        name: "Federico Fellini",
+        image: "/assets/FocusImages/federicofellini.png",
+        type: "director",
+        role: "Director • 24 films",
+        href: "/DirectorReviews/federicofellini.html"
+      },
+      {
+        id: "ingmarbergman",
+        name: "Ingmar Bergman",
+        image: "/assets/FocusImages/ingmarbergman.png",
+        type: "director",
+        role: "Director • 60 films",
+        href: "/DirectorReviews/ingmarbergman.html"
+      },
+      {
+        id: "jeanlucgodard",
+        name: "Jean-Luc Godard",
+        image: "/assets/FocusImages/jeanlucgodard.png",
+        type: "director",
+        role: "Director • 100+ films",
+        href: "/DirectorReviews/jeanlucgodard.html"
+      },
+      {
+        id: "francoistruffaut",
+        name: "François Truffaut",
+        image: "/assets/FocusImages/francoistruffaut.png",
+        type: "director",
+        role: "Director • 25 films",
+        href: "/DirectorReviews/francoistruffaut.html"
+      },
+      {
+        id: "michaelbjordan",
+        name: "Michael B. Jordan",
+        image: "/assets/FocusImages/michaelbjordan.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/michaelbjordan.html"
+      },
+      {
+        id: "zendaya",
+        name: "Zendaya",
+        image: "/assets/FocusImages/zendaya.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/zendaya.html"
+      },
+      {
+        id: "florencepugh",
+        name: "Florence Pugh",
+        image: "/assets/FocusImages/florencepugh.png",
+        type: "actor",
+        role: "Actor • 15+ films",
+        href: "/ActorReviews/florencepugh.html"
+      },
+      {
+        id: "timotheechalamet",
+        name: "Timothée Chalamet",
+        image: "/assets/FocusImages/timotheechalamet.png",
+        type: "actor",
+        role: "Actor • 15+ films",
+        href: "/ActorReviews/timotheechalamet.html"
+      },
+      {
+        id: "saoirseronan",
+        name: "Saoirse Ronan",
+        image: "/assets/FocusImages/saoirseronan.png",
+        type: "actor",
+        role: "Actor • 25+ films",
+        href: "/ActorReviews/saoirseronan.html"
+      },
+      {
+        id: "danielkaluuya",
+        name: "Daniel Kaluuya",
+        image: "/assets/FocusImages/danielkaluuya.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/danielkaluuya.html"
+      },
+      {
+        id: "lakeithstanfield",
+        name: "LaKeith Stanfield",
+        image: "/assets/FocusImages/lakeithstanfield.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/lakeithstanfield.html"
+      },
+      {
+        id: "awkwafina",
+        name: "Awkwafina",
+        image: "/assets/FocusImages/awkwafina.png",
+        type: "actor",
+        role: "Actor • 15+ films",
+        href: "/ActorReviews/awkwafina.html"
+      },
+      {
+        id: "johndavidwashington",
+        name: "John David Washington",
+        image: "/assets/FocusImages/johndavidwashington.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/johndavidwashington.html"
+      },
+      {
+        id: "anyataylorjoy",
+        name: "Anya Taylor-Joy",
+        image: "/assets/FocusImages/anyataylorjoy.png",
+        type: "actor",
+        role: "Actor • 15+ films",
+        href: "/ActorReviews/anyataylorjoy.html"
+      },
+      {
+        id: "jonathanmajors",
+        name: "Jonathan Majors",
+        image: "/assets/FocusImages/jonathanmajors.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/jonathanmajors.html"
+      },
+      {
+        id: "briantyreehenry",
+        name: "Brian Tyree Henry",
+        image: "/assets/FocusImages/briantyreehenry.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/briantyreehenry.html"
+      },
+      {
+        id: "yuhjungyoun",
+        name: "Yuh-jung Youn",
+        image: "/assets/FocusImages/yuhjungyoun.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/yuhjungyoun.html"
+      },
+      {
+        id: "stevenyeun",
+        name: "Steven Yeun",
+        image: "/assets/FocusImages/stevenyeun.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/stevenyeun.html"
+      },
+      {
+        id: "rizahmed",
+        name: "Riz Ahmed",
+        image: "/assets/FocusImages/rizahmed.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/rizahmed.html"
+      },
+      {
+        id: "tomhardy",
+        name: "Tom Hardy",
+        image: "/assets/FocusImages/tomhardy.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/tomhardy.html"
+      },
+      {
+        id: "domhnallgleeson",
+        name: "Domhnall Gleeson",
+        image: "/assets/FocusImages/domhnallgleeson.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/domhnallgleeson.html"
+      },
+      {
+        id: "willpoulter",
+        name: "Will Poulter",
+        image: "/assets/FocusImages/willpoulter.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/willpoulter.html"
+      },
+      {
+        id: "forrestgoodluck",
+        name: "Forrest Goodluck",
+        image: "/assets/FocusImages/forrestgoodluck.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/forrestgoodluck.html"
+      },
+      {
+        id: "paulanderson",
+        name: "Paul Anderson",
+        image: "/assets/FocusImages/paulanderson.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/paulanderson.html"
+      },
+      {
+        id: "jonahhill",
+        name: "Jonah Hill",
+        image: "/assets/FocusImages/jonahhill.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/jonahhill.html"
+      },
+      {
+        id: "kylechandler",
+        name: "Kyle Chandler",
+        image: "/assets/FocusImages/kylechandler.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/kylechandler.html"
+      },
+      {
+        id: "robreiner",
+        name: "Rob Reiner",
+        image: "/assets/FocusImages/robreiner.png",
+        type: "actor",
+        role: "Actor/Director • 60+ films",
+        href: "/ActorReviews/robreiner.html"
+      },
+      {
+        id: "jonbernthal",
+        name: "Jon Bernthal",
+        image: "/assets/FocusImages/jonbernthal.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/jonbernthal.html"
+      },
+      {
+        id: "benkingsley",
+        name: "Ben Kingsley",
+        image: "/assets/FocusImages/benkingsley.png",
+        type: "actor",
+        role: "Actor • 100+ films",
+        href: "/ActorReviews/benkingsley.html"
+      },
+      {
+        id: "michellewilliams",
+        name: "Michelle Williams",
+        image: "/assets/FocusImages/michellewilliams.png",
+        type: "actor",
+        role: "Actress • 40+ films",
+        href: "/ActorReviews/michellewilliams.html"
+      },
+      {
+        id: "emilymortimer",
+        name: "Emily Mortimer",
+        image: "/assets/FocusImages/emilymortimer.png",
+        type: "actor",
+        role: "Actress • 50+ films",
+        href: "/ActorReviews/emilymortimer.html"
+      },
+      {
+        id: "tomsizemore",
+        name: "Tom Sizemore",
+        image: "/assets/FocusImages/tomsizemore.png",
+        type: "actor",
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/tomsizemore.html"
+      },
+      {
+        id: "edwardburns",
+        name: "Edward Burns",
+        image: "/assets/FocusImages/edwardburns.png",
+        type: "actor",
+        role: "Actor/Director • 30+ films",
+        href: "/ActorReviews/edwardburns.html"
+      },
+      {
+        id: "barrypepper",
+        name: "Barry Pepper",
+        image: "/assets/FocusImages/barrypepper.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/barrypepper.html"
+      },
+      {
+        id: "adamgoldberg",
+        name: "Adam Goldberg",
+        image: "/assets/FocusImages/adamgoldberg.png",
+        type: "actor",
+        role: "Actor • 60+ films",
+        href: "/ActorReviews/adamgoldberg.html"
+      },
+      {
+        id: "michaelclarkeduncan",
+        name: "Michael Clarke Duncan",
+        image: "/assets/FocusImages/michaelclarkeduncan.png",
+        type: "actor",
+        role: "Actor • 50+ films",
+        href: "/ActorReviews/michaelclarkeduncan.html"
+      },
+      {
+        id: "alvaromorte",
+        name: "Álvaro Morte",
+        image: "/assets/FocusImages/alvaromorte.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/alvaromorte.html"
+      },
+      {
+        id: "ursulacorbero",
+        name: "Úrsula Corberó",
+        image: "/assets/FocusImages/ursulacorbero.png",
+        type: "actor",
+        role: "Actress • 20+ films",
+        href: "/ActorReviews/ursulacorbero.html"
+      },
+      {
+        id: "pedroalonso",
+        name: "Pedro Alonso",
+        image: "/assets/FocusImages/pedroalonso.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/pedroalonso.html"
+      },
+      {
+        id: "itziarituno",
+        name: "Itziar Ituño",
+        image: "/assets/FocusImages/itziarituno.png",
+        type: "actor",
+        role: "Actress • 15+ films",
+        href: "/ActorReviews/itziarituno.html"
+      },
+      {
+        id: "albaflores",
+        name: "Alba Flores",
+        image: "/assets/FocusImages/albaflores.png",
+        type: "actor",
+        role: "Actress • 15+ films",
+        href: "/ActorReviews/albaflores.html"
+      },
+      {
+        id: "miguelherran",
+        name: "Miguel Herrán",
+        image: "/assets/FocusImages/miguelherran.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/miguelherran.html"
+      },
+      {
+        id: "jaimelorente",
+        name: "Jaime Lorente",
+        image: "/assets/FocusImages/jaimelorente.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/jaimelorente.html"
+      },
+      {
+        id: "esteracebo",
+        name: "Esther Acebo",
+        image: "/assets/FocusImages/esteracebo.png",
+        type: "actor",
+        role: "Actress • 10+ films",
+        href: "/ActorReviews/esteracebo.html"
+      },
+      {
+        id: "darkoperic",
+        name: "Darko Perić",
+        image: "/assets/FocusImages/darkoperic.png",
+        type: "actor",
+        role: "Actor • 15+ films",
+        href: "/ActorReviews/darkoperic.html"
+      },
+      {
+        id: "najwanimri",
+        name: "Najwa Nimri",
+        image: "/assets/FocusImages/najwanimri.png",
+        type: "actor",
+        role: "Actress • 40+ films",
+        href: "/ActorReviews/najwanimri.html"
+      },
+      {
+        id: "mariapedraza",
+        name: "María Pedraza",
+        image: "/assets/FocusImages/mariapedraza.png",
+        type: "actor",
+        role: "Actress • 10+ films",
+        href: "/ActorReviews/mariapedraza.html"
+      },
+      {
+        id: "enriquearce",
+        name: "Enrique Arce",
+        image: "/assets/FocusImages/enriquearce.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/enriquearce.html"
+      },
+      {
+        id: "pacotous",
+        name: "Paco Tous",
+        image: "/assets/FocusImages/pacotous.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/pacotous.html"
+      },
+      {
+        id: "rodrigodelaserna",
+        name: "Rodrigo de la Serna",
+        image: "/assets/FocusImages/rodrigodelaserna.png",
+        type: "actor",
+        role: "Actor • 30+ films",
+        href: "/ActorReviews/rodrigodelaserna.html"
+      },
+      {
+        id: "hovikkeuchkerian",
+        name: "Hovik Keuchkerian",
+        image: "/assets/FocusImages/hovikkeuchkerian.png",
+        type: "actor",
+        role: "Actor • 20+ films",
+        href: "/ActorReviews/hovikkeuchkerian.html"
+      },
+      {
+        id: "begonavargas",
+        name: "Begoña Vargas",
+        image: "/assets/FocusImages/begonavargas.png",
+        type: "actor",
+        role: "Actress • 10+ films",
+        href: "/ActorReviews/begonavargas.html"
+      },
+      {
+        id: "samanthasiquieros",
+        name: "Samantha Siquieros",
+        image: "/assets/FocusImages/samanthasiqueiros.png",
+        type: "actor",
+        role: "Actress • 5+ films",
+        href: "/ActorReviews/samanthasiqueiros.html"
+      },
+      {
+        id: "juliopena",
+        name: "Julio Peña",
+        image: "/assets/FocusImages/juliopena.png",
+        type: "actor",
+        role: "Actor • 10+ films",
+        href: "/ActorReviews/juliopena.html"
+      },
+      {
+        id: "tristanulloa",
+        name: "Tristán Ulloa",
+        image: "/assets/FocusImages/tristanulloa.png",
+        type: "actor",
+        role: "Actor • 40+ films",
+        href: "/ActorReviews/tristanulloa.html"
+      },
+      {
+        id: "michellejenner",
+        name: "Michelle Jenner",
+        image: "/assets/FocusImages/michellejenner.png",
+        type: "actor",
+        role: "Actress • 50+ films",
+        href: "/ActorReviews/michellejenner.html"
+      },
+      {
+        id: "alexpina",
+        name: "Álex Pina",
+        image: "/assets/FocusImages/alexpina.png",
+        type: "director",
+        role: "Director • 10+ series",
+        href: "/DirectorReviews/alexpina.html"
+      },
+      {
+        id: "peterfalk",
+        name: "Peter Falk",
+        image: "/assets/FocusImages/peterfalk.png",
+        type: "actor", 
+        role: "Actor • 70+ films",
+        href: "/ActorReviews/peterfalk.html"
+      },
+    ];
+
+    // State
+    let currentFilter = 'all';
+    let searchQuery = '';
+    let currentPage = 1;
+    const profilesPerPage = 20;
+    let profiles = [...sampleProfiles];
+
+    // DOM
+    const profilesGrid = document.getElementById('profilesGrid');
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const tabs = document.querySelectorAll('.tab');
+    const loadMoreContainer = document.getElementById('loadMoreContainer');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const resultsCountEl = document.getElementById('resultsCount');
+
+    // Filter profiles based on search query
+    function filterProfilesBySearch(profiles, query) {
+      if (!query.trim()) return profiles;
+      
+      const searchTerm = query.toLowerCase().trim();
+      return profiles.filter(profile => 
+        profile.name.toLowerCase().includes(searchTerm) ||
+        profile.role.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // Get paginated profiles
+    function getPaginatedProfiles(profiles, page, perPage) {
+      const startIndex = (page - 1) * perPage;
+      const endIndex = startIndex + perPage;
+      return profiles.slice(0, endIndex);
+    }
+
+    // Check if there are more profiles to load
+    function hasMoreProfiles(profiles, page, perPage) {
+      return page * perPage < profiles.length;
+    }
+
+    // Render function
+    function renderProfiles(resetPage = false) {
+      if (resetPage) {
+        currentPage = 1;
+      }
+
+      // Filter by type and search
+      const typeFiltered = profiles.filter(p => currentFilter === 'all' || p.type === currentFilter);
+      const searchFiltered = filterProfilesBySearch(typeFiltered, searchQuery);
+
+      // Get paginated results
+      const paginatedProfiles = getPaginatedProfiles(searchFiltered, currentPage, profilesPerPage);
+      const totalFilteredProfiles = searchFiltered.length;
+      const hasMore = hasMoreProfiles(searchFiltered, currentPage, profilesPerPage);
+
+      // Update count - show both loaded and total
+      const loadedCount = paginatedProfiles.length;
+      resultsCountEl.textContent = `Showing ${loadedCount} of ${totalFilteredProfiles} results`;
+
+      // Show/hide load more button
+      if (hasMore && totalFilteredProfiles > profilesPerPage) {
+        loadMoreContainer.style.display = 'block';
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
+
+      // Render profiles
+      profilesGrid.innerHTML = '';
+      
+      if (paginatedProfiles.length === 0) {
+        profilesGrid.innerHTML = `
+          <div class="no-results">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <h3>No profiles found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+          </div>
+        `;
+        return;
+      }
+
+      paginatedProfiles.forEach(p => {
+        const profileCard = document.createElement('a');
+        profileCard.className = 'profile-card';
+        profileCard.href = p.href;
+        profileCard.setAttribute('data-type', p.type);
+        profileCard.setAttribute('aria-label', `${p.name} - open profile page`);
+        profileCard.innerHTML = `
+          <div class="profile-img">
+            <img src="${p.image}" alt="${p.name}" loading="lazy">
+          </div>
+          <div class="profile-info">
+            <h3>${p.name}</h3>
+            <p class="role">${p.role}</p>
+            <span class="btn-outline">View Full Profile</span>
+          </div>
+        `;
+        profilesGrid.appendChild(profileCard);
+      });
+    }
+
+    // Load more profiles
+    function loadMoreProfiles() {
+      currentPage++;
+      renderProfiles(false);
+    }
+
+    // Event handlers
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentFilter = tab.getAttribute('data-filter');
+        renderProfiles(true);
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      // Show/hide clear button
+      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+      renderProfiles(true);
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      renderProfiles(true);
+      searchInput.focus();
+    });
+
+    // Clear search on Escape key
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.style.display = 'none';
+        renderProfiles(true);
+      }
+    });
+
+    loadMoreBtn.addEventListener('click', loadMoreProfiles);
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const isActive = mobileMenuOverlay.classList.contains('active');
+      
+      if (isActive) {
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+      mobileMenuOverlay.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Event listeners
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+    
+    // Close mobile menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close mobile menu when clicking outside the menu
+    mobileMenuOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileMenuOverlay) {
+        closeMobileMenu();
+      }
+    });
+
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Initial render
+    renderProfiles(true);
+  </script>
+</body>
+</html>

@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGJEB1784P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NGJEB1784P');
+  </script>
+
+    <!-- Favicon -->
+  <link rel="icon" href="/assets/logo/framedeer.png" type="image/png">
+  <meta charset="utf-8" />
+  <link rel="icon" href="/assets/logo/framedeer.png" type="Frame Deer Main Logo - Movie reviews site for enthusiasts">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Series Reviews - FrameDeer | Comprehensive TV Series Analysis & Ratings</title>
+  <meta name="description" content="Browse FrameDeer's comprehensive TV series reviews collection. Filter by genre, search shows, and discover detailed analysis of television from classic to contemporary.">
+  <meta name="keywords" content="series reviews, TV show ratings, television analysis, series database, TV criticism, FrameDeer series">
+  <link rel="stylesheet" href="movies.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo-title-container">
+        <a href="/index.html" class="logo-link">
+          <img src="/assets/logo/framedeer.png" alt="FrameDeer Logo - Movie Reviews and Ratings" class="nav-logo-img">
+        </a>
+        <a href="/index.html" class="nav-logo">FrameDeer</a>
+      </div>  
+      
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/movies.html">Movies</a></li>
+        <li><a href="/series.html">Series</a></li>
+        <li><a href="/focus.html">Focus</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/tournament.html">Tournament</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+        <span class="menu-line menu-line-1"></span>
+        <span class="menu-line menu-line-2"></span>
+        <span class="menu-line menu-line-3"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close mobile menu">
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/movies.html">Movies</a></li>
+      <li><a href="/series.html">Series</a></li>
+      <li><a href="/focus.html">Focus</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/tournament.html">Tournament</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </div>
+
+  <main class="container">
+    <!-- Header -->
+    <header class="page-header">
+          <h1>Series Reviews</h1>
+      <p>Explore exceptional television through our professional critique lens. From gripping dramas to binge-worthy comedies, discover our comprehensive collection of series reviews.</p>
+     </header>
+
+    <!-- Filters and Controls -->
+    <section class="filters-controls">
+      <div class="filters">
+        <label for="genre">Genre:</label>
+        <select id="genre">
+          <option value="all">All Genres</option>
+          <option value="Animated">Animated</option>
+          <option value="Drama">Drama</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Romance">Romance</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Biography">Biography</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Crime">Crime</option>
+          <option value="Action">Action</option>
+          <option value="War">War</option>
+          <option value="Mystery">Mystery</option>
+        </select>
+
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option value="rating">Rating</option>
+          <option value="year">Year</option>
+          <option value="title">Title</option>
+        </select>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <label for="search" class="sr-only">Search seres</label>
+          <div class="search-input-wrapper">
+            <i class="fas fa-search search-icon" aria-hidden="true"></i>
+            <input type="text" id="search" placeholder="Search series..." aria-label="Search series by title">
+            <button type="button" id="clearSearch" class="clear-search" aria-label="Clear search" style="display: none;">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-mode">
+        <button id="gridView" class="active" aria-pressed="true">
+          <i class="fas fa-th" aria-hidden="true"></i>
+          <span>Grid</span>
+        </button>
+        <button id="listView" aria-pressed="false">
+          <i class="fas fa-list" aria-hidden="true"></i>
+          <span>List</span>
+        </button>
+        <span id="movieCount" class="movie-count">0 series</span>
+      </div>
+    </section>
+
+    <!-- Movies Grid/List (rendered by JS) -->
+    <section id="moviesGrid" class="movies-grid grid-view" aria-live="polite"></section>
+
+    <!-- Load More Button -->
+    <div id="loadMoreContainer" class="load-more-container" style="display: none;">
+      <button id="loadMoreBtn" class="load-more-btn">
+        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        Load More Series
+        <span id="remainingCount" class="remaining-count"></span>
+      </button>
+    </div>
+  </main>
+
+  <script>
+    // Series Data
+    const sampleMovies = [
+      {
+        id: "truedetective",
+        title: "True Detective",
+        poster: "/assets/SeriesImages/truedetective.png",
+        rating: 8.8,
+        year: 2010,
+        genre: "Sci-Fi",
+        runtime: 148,
+        snippet: "True Detective is mindblowing",
+        href: "/SeriesReviews/truedetective.html"
+      },
+      {
+        id: "moneyheist",
+        title: "Money Heist",
+        poster: "/assets/SeriesImages/moneyheist.png",
+        rating: 9.1,
+        year: 2017,
+        genre: "Crime, Drama, Thriller",
+        runtime: 70,
+        snippet: "An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
+        href: "/SeriesReviews/moneyheist.html"
+      },
+      {
+        id: "berlin",
+        title: "Berlin",
+        poster: "/assets/SeriesImages/berlin.png",
+        rating: 8.6,
+        year: 2023,
+        genre: "Crime, Drama, Thriller",
+        runtime: 50,
+        snippet: "Before the events of Money Heist, Berlin and a masterful gang gather in Paris to plan one of his most ambitious robberies ever.",
+        href: "/SeriesReviews/berlin.html"
+      },
+      {
+        id: "columbo",
+        title: "Columbo",
+        poster: "/assets/SeriesImages/columbo.png",
+        rating: 8.6,
+        year: 1968,
+        genre: "Crime, Drama, Mystery",
+        runtime: 73,
+        snippet: "A brilliant but disheveled homicide detective uses his unassuming demeanor and relentless questioning to solve seemingly perfect crimes.",
+        href: "/SeriesReviews/columbo.html"
+      },
+      {
+    id: "adolescence",
+    title: "Adolescence",
+    poster: "/assets/SeriesImages/adolescence.png",
+    rating: 1.0,
+    year: 2023,
+    genre: "Drama",
+    runtime: 45,
+    snippet: "A coming-of-age series exploring the complex lives of teenagers navigating high school, relationships, and self-discovery.",
+    href: "/SeriesReviews/adolescence.html"
+},
+{
+    id: "andor",
+    title: "Andor",
+    poster: "/assets/SeriesImages/andor.png",
+    rating: 1.0,
+    year: 2022,
+    genre: "Sci-Fi, Action",
+    runtime: 52,
+    snippet: "The story of Cassian Andor's journey to become a rebel hero and his adventures before the events of Rogue One.",
+    href: "/SeriesReviews/andor.html"
+},
+{
+    id: "bettercallsaul",
+    title: "Better Call Saul",
+    poster: "/assets/SeriesImages/bettercallsaul.png",
+    rating: 1.0,
+    year: 2015,
+    genre: "Crime, Drama",
+    runtime: 46,
+    snippet: "The evolution of small-time attorney Jimmy McGill into Albuquerque's top criminal lawyer, Saul Goodman.",
+    href: "/SeriesReviews/bettercallsaul.html"
+},
+{
+    id: "blackmirror",
+    title: "Black Mirror",
+    poster: "/assets/SeriesImages/blackmirror.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Sci-Fi, Thriller",
+    runtime: 60,
+    snippet: "An anthology series exploring a twisted, high-tech world where humanity's greatest innovations and darkest instincts collide.",
+    href: "/SeriesReviews/blackmirror.html"
+},
+{
+    id: "breakingbad",
+    title: "Breaking Bad",
+    poster: "/assets/SeriesImages/breakingbad.png",
+    rating: 1.0,
+    year: 2008,
+    genre: "Crime, Drama",
+    runtime: 49,
+    snippet: "A high school chemistry teacher diagnosed with cancer turns to manufacturing and selling methamphetamine to secure his family's future.",
+    href: "/SeriesReviews/breakingbad.html"
+},
+{
+    id: "chernobyl",
+    title: "Chernobyl",
+    poster: "/assets/SeriesImages/chernobyl.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Drama, History",
+    runtime: 60,
+    snippet: "The true story of the 1986 nuclear accident and the sacrifices made to save Europe from unimaginable disaster.",
+    href: "/SeriesReviews/chernobyl.html"
+},
+{
+    id: "chillingadventuresofsabrina",
+    title: "Chilling Adventures Of Sabrina",
+    poster: "/assets/SeriesImages/chillingadventuresofsabrina.png",
+    rating: 1.0,
+    year: 2018,
+    genre: "Horror, Fantasy",
+    runtime: 60,
+    snippet: "Sabrina Spellman balances her dual nature as a half-witch, half-mortal while fighting evil forces that threaten her family and the mortal world.",
+    href: "/SeriesReviews/chillingadventuresofsabrina.html"
+},
+{
+    id: "deathnote",
+    title: "Death Note",
+    poster: "/assets/SeriesImages/deathnote.png",
+    rating: 1.0,
+    year: 2006,
+    genre: "Animation, Crime",
+    runtime: 24,
+    snippet: "A high school student discovers a supernatural notebook that allows him to kill anyone by writing the victim's name while picturing their face.",
+    href: "/SeriesReviews/deathnote.html"
+},
+{
+    id: "friends",
+    title: "Friends",
+    poster: "/assets/SeriesImages/friends.png",
+    rating: 1.0,
+    year: 1994,
+    genre: "Comedy, Romance",
+    runtime: 22,
+    snippet: "Follows the personal and professional lives of six twenty-something-year-old friends living in Manhattan.",
+    href: "/SeriesReviews/friends.html"
+},
+{
+    id: "from",
+    title: "From",
+    poster: "/assets/SeriesImages/from.png",
+    rating: 1.0,
+    year: 2022,
+    genre: "Horror, Mystery",
+    runtime: 50,
+    snippet: "Unravel the mystery of a nightmarish town that traps all who enter, forcing them to survive against terrifying creatures.",
+    href: "/SeriesReviews/from.html"
+},
+{
+    id: "heartbreakhigh",
+    title: "Heartbreak High",
+    poster: "/assets/SeriesImages/heartbreakhigh.png",
+    rating: 1.0,
+    year: 2022,
+    genre: "Drama, Comedy",
+    runtime: 50,
+    snippet: "Students at Hartley High deal with relationships, identity, and the messy reality of modern teenage life in Australia.",
+    href: "/SeriesReviews/heartbreakhigh.html"
+},
+{
+    id: "kungfupanda",
+    title: "Kung Fu Panda",
+    poster: "/assets/SeriesImages/kungfupandaseries.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Animation, Action",
+    runtime: 22,
+    snippet: "Follows Po and the Furious Five as they continue their adventures and face new threats in the Valley of Peace.",
+    href: "/SeriesReviews/kungfupandaseries.html"
+},
+{
+    id: "mriglesias",
+    title: "Mr. Iglesias",
+    poster: "/assets/SeriesImages/mriglesias.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Comedy",
+    runtime: 30,
+    snippet: "A good-natured high school teacher tries to make a difference in the lives of his smart but underperforming students.",
+    href: "/SeriesReviews/mriglesias.html"
+},
+{
+    id: "gilmoregirls",
+    title: "Gilmore Girls",
+    poster: "/assets/SeriesImages/gilmoregirls.png",
+    rating: 1.0,
+    year: 2000,
+    genre: "Drama, Comedy",
+    runtime: 44,
+    snippet: "A dramedy about the close relationship between a single mother and her daughter living in the fictional town of Stars Hollow, Connecticut.",
+    href: "/SeriesReviews/gilmoregirls.html"
+},
+{
+    id: "lucifer",
+    title: "Lucifer",
+    poster: "/assets/SeriesImages/lucifer.png",
+    rating: 1.0,
+    year: 2016,
+    genre: "Crime, Fantasy",
+    runtime: 45,
+    snippet: "Lucifer Morningstar, the original fallen angel, becomes bored with his life in hell and moves to Los Angeles where he helps the LAPD punish criminals.",
+    href: "/SeriesReviews/lucifer.html"
+},
+{
+    id: "thepinkpanther",
+    title: "The Pink Panther",
+    poster: "/assets/SeriesImages/thepinkpanther.png",
+    rating: 1.0,
+    year: 1969,
+    genre: "Animation, Comedy",
+    runtime: 7,
+    snippet: "The silent, cool and collected Pink Panther stumbles through various adventures while being pursued by the Little Man.",
+    href: "/SeriesReviews/thepinkpanther.html"
+},
+{
+    id: "scoobydoo",
+    title: "Scooby Doo",
+    poster: "/assets/SeriesImages/scoobydoo.png",
+    rating: 1.0,
+    year: 1969,
+    genre: "Animation, Mystery",
+    runtime: 22,
+    snippet: "Four teenagers and their Great Dane solve mysteries involving supposedly supernatural creatures through a series of antics and missteps.",
+    href: "/SeriesReviews/scoobydoo.html"
+},
+{
+    id: "suits",
+    title: "Suits",
+    poster: "/assets/SeriesImages/suits.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Drama, Comedy",
+    runtime: 44,
+    snippet: "On the run from a drug deal gone bad, a brilliant college dropout finds himself working with one of New York City's best lawyers.",
+    href: "/SeriesReviews/suits.html"
+},
+{
+    id: "strangerthings",
+    title: "Stranger Things",
+    poster: "/assets/SeriesImages/strangerthings.png",
+    rating: 1.0,
+    year: 2016,
+    genre: "Sci-Fi, Horror",
+    runtime: 51,
+    snippet: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+    href: "/SeriesReviews/strangerthings.html"
+},
+{
+    id: "risingdion",
+    title: "Rising Dion",
+    poster: "/assets/SeriesImages/risingdion.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Sci-Fi, Drama",
+    runtime: 50,
+    snippet: "A widowed single mother discovers that her young son has superpowers and must protect him from those trying to exploit him.",
+    href: "/SeriesReviews/risingdion.html"
+},
+{
+    id: "tedlasso",
+    title: "Ted Lasso",
+    poster: "/assets/SeriesImages/tedlasso.png",
+    rating: 1.0,
+    year: 2020,
+    genre: "Comedy, Drama",
+    runtime: 30,
+    snippet: "An American football coach is hired to manage a British soccer team despite having no experience, bringing his folksy charm to the UK.",
+    href: "/SeriesReviews/tedlasso.html"
+},
+{
+    id: "thebadbatch",
+    title: "The Bad Batch",
+    poster: "/assets/SeriesImages/thebadbatch.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Animation, Action",
+    runtime: 25,
+    snippet: "The 'Bad Batch' of elite and experimental clones find their way in a rapidly changing galaxy in the immediate aftermath of the Clone War.",
+    href: "/SeriesReviews/thebadbatch.html"
+},
+{
+    id: "thebigbangtheory",
+    title: "The Big Bang Theory",
+    poster: "/assets/SeriesImages/thebigbangtheory.png",
+    rating: 1.0,
+    year: 2007,
+    genre: "Comedy",
+    runtime: 22,
+    snippet: "A woman who moves into an apartment across the hall from two brilliant but socially awkward physicists shows them how little they know about life.",
+    href: "/SeriesReviews/thebigbangtheory.html"
+},
+{
+    id: "thelastofus",
+    title: "The Last of Us",
+    poster: "/assets/SeriesImages/thelastofus.png",
+    rating: 1.0,
+    year: 2023,
+    genre: "Drama, Horror",
+    runtime: 60,
+    snippet: "After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope.",
+    href: "/SeriesReviews/thelastofus.html"
+},
+{
+    id: "themandalorian",
+    title: "The Mandalorian",
+    poster: "/assets/SeriesImages/themandalorian.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Sci-Fi, Action",
+    runtime: 38,
+    snippet: "The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic.",
+    href: "/SeriesReviews/themandalorian.html"
+},
+{
+    id: "tomandjerry",
+    title: "Tom And Jerry",
+    poster: "/assets/SeriesImages/tomandjerry.png",
+    rating: 1.0,
+    year: 1940,
+    genre: "Animation, Comedy",
+    runtime: 7,
+    snippet: "The never-ending rivalry between a house cat and a mouse, resulting in endless chases and comic chaos.",
+    href: "/SeriesReviews/tomandjerry.html"
+},
+{
+    id: "webarebears",
+    title: "We Bare Bears",
+    poster: "/assets/SeriesImages/webarebears.png",
+    rating: 1.0,
+    year: 2015,
+    genre: "Animation, Comedy",
+    runtime: 11,
+    snippet: "Three brother bears awkwardly attempt to find their place in civilized society, whether they're looking for food or trying to make human friends.",
+    href: "/SeriesReviews/webarebears.html"
+},
+{
+    id: "you",
+    title: "You",
+    poster: "/assets/SeriesImages/you.png",
+    rating: 1.0,
+    year: 2018,
+    genre: "Crime, Drama",
+    runtime: 45,
+    snippet: "A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.",
+    href: "/SeriesReviews/you.html"
+},
+{
+    id: "whatsnewscoobydoo",
+    title: "What's New Scooby Doo",
+    poster: "/assets/SeriesImages/whatsnewscoobydoo.png",
+    rating: 1.0,
+    year: 2002,
+    genre: "Animation, Mystery",
+    runtime: 22,
+    snippet: "The Mystery Inc. gang returns with new mysteries to solve, updated technology, and contemporary settings while maintaining their classic formula.",
+    href: "/SeriesReviews/whatsnewscoobydoo.html"
+},
+{
+    id: "scoobydoomysteryincorporated",
+    title: "Scooby Doo: Mystery Incorporated",
+    poster: "/assets/SeriesImages/scoobydoomysteryincorporated.png",
+    rating: 1.0,
+    year: 2010,
+    genre: "Animation, Mystery",
+    runtime: 22,
+    snippet: "A modern reboot with serialized storytelling as the gang uncovers the dark secrets of their hometown while solving supernatural mysteries.",
+    href: "/SeriesReviews/scoobydoomysteryincorporated.html"
+},
+{
+    id: "becoolscoobydoo",
+    title: "Be Cool Scooby Doo",
+    poster: "/assets/SeriesImages/becoolscoobydoo.png",
+    rating: 1.0,
+    year: 2015,
+    genre: "Animation, Comedy",
+    runtime: 22,
+    snippet: "A more comedic take on the classic series with a focus on humor and character-driven stories while maintaining the mystery-solving format.",
+    href: "/SeriesReviews/becoolscoobydoo.html"
+},
+{
+    id: "13reasonswhy",
+    title: "13 Reasons Why",
+    poster: "/assets/SeriesImages/13reasonswhy.png",
+    rating: 1.0,
+    year: 2017,
+    genre: "Drama, Mystery",
+    runtime: 60,
+    snippet: "Following a teenage girl's suicide, her classmate receives a series of tapes that unravel the mystery of her tragic decision.",
+    href: "/SeriesReviews/13reasonswhy.html"
+},
+{
+    id: "adventuretime",
+    title: "Adventure Time",
+    poster: "/assets/SeriesImages/adventuretime.png",
+    rating: 1.0,
+    year: 2010,
+    genre: "Animation, Adventure",
+    runtime: 11,
+    snippet: "A 12-year-old boy and his best friend, a wise 28-year-old dog with magical powers, go on adventures in the post-apocalyptic Land of Ooo.",
+    href: "/SeriesReviews/adventuretime.html"
+},
+{
+    id: "amazingworldofgumball",
+    title: "Amazing World Of Gumball",
+    poster: "/assets/SeriesImages/amazingworldofgumball.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Animation, Comedy",
+    runtime: 11,
+    snippet: "A blue cat and his goldfish best friend cause mischief and mayhem in their suburban hometown while dealing with school and family life.",
+    href: "/SeriesReviews/amazingworldofgumball.html"
+},
+{
+    id: "behindhereyes",
+    title: "Behind Her Eyes",
+    poster: "/assets/SeriesImages/behindhereyes.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Thriller, Drama",
+    runtime: 50,
+    snippet: "A single mother begins an affair with her psychiatrist boss while secretly befriending his mysterious wife, leading to shocking revelations.",
+    href: "/SeriesReviews/behindhereyes.html"
+},
+{
+    id: "dashandlily",
+    title: "Dash & Lily",
+    poster: "/assets/SeriesImages/dashandlily.png",
+    rating: 1.0,
+    year: 2020,
+    genre: "Romance, Comedy",
+    runtime: 25,
+    snippet: "Two teens trade dares, dreams, and desires in a notebook they pass back and forth around New York City during the holiday season.",
+    href: "/SeriesReviews/dashandlily.html"
+},
+{
+    id: "formula1drivetosurvive",
+    title: "Formula 1: Drive To Survive",
+    poster: "/assets/SeriesImages/formula1drivetosurvive.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Documentary, Sport",
+    runtime: 40,
+    snippet: "Behind-the-scenes documentary series following the drivers and teams of the FIA Formula One World Championship across each season.",
+    href: "/SeriesReviews/formula1drivetosurvive.html"
+},
+{
+    id: "garfieldseries",
+    title: "Garfield",
+    poster: "/assets/SeriesImages/garfieldseries.png",
+    rating: 1.0,
+    year: 1988,
+    genre: "Animation, Comedy",
+    runtime: 22,
+    snippet: "The lazy, lasagna-loving cat Garfield navigates life with his owner Jon Arbuckle and dim-witted dog companion Odie.",
+    href: "/SeriesReviews/garfieldseries.html"
+},
+{
+    id: "ginnyandgeorgia",
+    title: "Ginny & Georgia",
+    poster: "/assets/SeriesImages/ginnyandgeorgia.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Drama, Comedy",
+    runtime: 50,
+    snippet: "A free-spirited mother and her two kids move to a new town where the daughter navigates high school while secrets from their past emerge.",
+    href: "/SeriesReviews/ginnyandgeorgia.html"
+},
+{
+    id: "gravityfalls",
+    title: "Gravity Falls",
+    poster: "/assets/SeriesImages/gravityfalls.png",
+    rating: 1.0,
+    year: 2012,
+    genre: "Animation, Mystery",
+    runtime: 22,
+    snippet: "Twin siblings Dipper and Mabel Pines spend the summer with their great-uncle in the mysterious town of Gravity Falls, Oregon.",
+    href: "/SeriesReviews/gravityfalls.html"
+},
+{
+    id: "grizzlyandthelemmings",
+    title: "Grizzly And The Lemmings",
+    poster: "/assets/SeriesImages/grizzlyandthelemmings.png",
+    rating: 1.0,
+    year: 2016,
+    genre: "Animation, Comedy",
+    runtime: 7,
+    snippet: "A lazy bear and his energetic lemming friends get into hilarious misadventures in the forest where they live.",
+    href: "/SeriesReviews/grizzlyandthelemmings.html"
+},
+{
+    id: "jeffreydahmer",
+    title: "Jeffrey Dahmer",
+    poster: "/assets/SeriesImages/jeffreydahmer.png",
+    rating: 1.0,
+    year: 2022,
+    genre: "Crime, Drama",
+    runtime: 60,
+    snippet: "The story of one of America's most notorious serial killers, Jeffrey Dahmer, and the systemic failures that allowed him to continue his crimes.",
+    href: "/SeriesReviews/jeffreydahmer.html"
+},
+{
+    id: "manwithaplan",
+    title: "Man With A Plan",
+    poster: "/assets/SeriesImages/manwithaplan.png",
+    rating: 1.0,
+    year: 2016,
+    genre: "Comedy",
+    runtime: 22,
+    snippet: "A contractor finds his life turned upside down when his wife goes back to work and he must take on more parenting responsibilities.",
+    href: "/SeriesReviews/manwithaplan.html"
+},
+{
+    id: "monstersatwork",
+    title: "Monsters At Work",
+    poster: "/assets/SeriesImages/monstersatwork.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Animation, Comedy",
+    runtime: 25,
+    snippet: "Follows Tylor Tuskmon and his friends as they work at Monsters, Incorporated after the company starts harvesting children's laughter instead of screams.",
+    href: "/SeriesReviews/monstersatwork.html"
+},
+{
+    id: "onlymurdersinthebuilding",
+    title: "Only Murders in the Building",
+    poster: "/assets/SeriesImages/onlymurdersinthebuilding.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Comedy, Mystery",
+    runtime: 30,
+    snippet: "Three strangers bonded by their love of true crime podcasts record their own to cover a murder happening in their exclusive Upper West Side apartment building.",
+    href: "/SeriesReviews/onlymurdersinthebuilding.html"
+},
+{
+    id: "overthegardenwall",
+    title: "Over The Garden Wall",
+    poster: "/assets/SeriesImages/overthegardenwall.png",
+    rating: 1.0,
+    year: 2014,
+    genre: "Animation, Adventure",
+    runtime: 11,
+    snippet: "Two brothers find themselves lost in a mysterious forest and try to find their way home with the help of a bluebird named Beatrice.",
+    href: "/SeriesReviews/overthegardenwall.html"
+},
+{
+    id: "schittscreek",
+    title: "Schitt's Creek",
+    poster: "/assets/SeriesImages/schittscreek.png",
+    rating: 1.0,
+    year: 2015,
+    genre: "Comedy",
+    runtime: 22,
+    snippet: "After losing their fortune, a wealthy family is forced to relocate to a small town they once bought as a joke and must adapt to their new life.",
+    href: "/SeriesReviews/schittscreek.html"
+},
+{
+    id: "shadowandbone",
+    title: "Shadow and Bone",
+    poster: "/assets/SeriesImages/shadowandbone.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Fantasy, Drama",
+    runtime: 50,
+    snippet: "A soldier discovers she has magical powers that could unite her war-torn world, but dangerous forces plot against her.",
+    href: "/SeriesReviews/shadowandbone.html"
+},
+{
+    id: "sherlock",
+    title: "Sherlock",
+    poster: "/assets/SeriesImages/sherlock.png",
+    rating: 1.0,
+    year: 2010,
+    genre: "Crime, Drama",
+    runtime: 90,
+    snippet: "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London with brilliant deduction and modern technology.",
+    href: "/SeriesReviews/sherlock.html"
+},
+{
+    id: "sexeducation",
+    title: "Sex Education",
+    poster: "/assets/SeriesImages/sexeducation.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Comedy, Drama",
+    runtime: 50,
+    snippet: "A teenage boy with a sex therapist mother teams up with a classmate to set up an underground sex therapy clinic at their high school.",
+    href: "/SeriesReviews/sexeducation.html"
+},
+{
+    id: "spaceforce",
+    title: "Space Force",
+    poster: "/assets/SeriesImages/spaceforce.png",
+    rating: 1.0,
+    year: 2020,
+    genre: "Comedy",
+    runtime: 30,
+    snippet: "A four-star general is tasked with getting the newly formed Space Force to the moon and beyond while dealing with bureaucracy and personal challenges.",
+    href: "/SeriesReviews/spaceforce.html"
+},
+{
+    id: "sweettooth",
+    title: "Sweet Tooth",
+    poster: "/assets/SeriesImages/sweettooth.png",
+    rating: 1.0,
+    year: 2021,
+    genre: "Fantasy, Drama",
+    runtime: 45,
+    snippet: "A hybrid deer-boy searches for a new home with a gruff protector in a post-apocalyptic world where hybrid children are hunted.",
+    href: "/SeriesReviews/sweettooth.html"
+},
+{
+    id: "theboys",
+    title: "The Boys",
+    poster: "/assets/SeriesImages/theboys.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Action, Comedy",
+    runtime: 60,
+    snippet: "A group of vigilantes set out to take down corrupt superheroes who abuse their superpowers rather than use them for good.",
+    href: "/SeriesReviews/theboys.html"
+},
+{
+    id: "theendofthefuckingworld",
+    title: "The End Of The F***ing World",
+    poster: "/assets/SeriesImages/theendofthefuckingworld.png",
+    rating: 1.0,
+    year: 2017,
+    genre: "Drama, Comedy",
+    runtime: 25,
+    snippet: "A self-proclaimed psychopath and a rebellious angry girl embark on a road trip that turns into a bizarre journey of self-discovery.",
+    href: "/SeriesReviews/theendofthefuckingworld.html"
+},
+{
+    id: "thelastkidsonearth",
+    title: "The Last Kids On Earth",
+    poster: "/assets/SeriesImages/thelastkidsonearth.png",
+    rating: 1.0,
+    year: 2019,
+    genre: "Animation, Adventure",
+    runtime: 25,
+    snippet: "A teenager and his friends live in a decked-out tree house and battle zombies while searching for other survivors after the monster apocalypse.",
+    href: "/SeriesReviews/thelastkidsonearth.html"
+},
+{
+    id: "thehollow",
+    title: "The Hollow",
+    poster: "/assets/SeriesImages/thehollow.png",
+    rating: 1.0,
+    year: 2018,
+    genre: "Animation, Mystery",
+    runtime: 25,
+    snippet: "Three teens wake up in a strange realm with no memory of how they got there and must work together to survive and find a way home.",
+    href: "/SeriesReviews/thehollow.html"
+},
+{
+    id: "twinpeaks",
+    title: "Twin Peaks",
+    poster: "/assets/SeriesImages/twinpeaks.png",
+    rating: 1.0,
+    year: 1990,
+    genre: "Drama, Mystery",
+    runtime: 47,
+    snippet: "An idiosyncratic FBI agent investigates the murder of a young woman in the even more idiosyncratic town of Twin Peaks.",
+    href: "/SeriesReviews/twinpeaks.html"
+},
+{
+    id: "wildkratts",
+    title: "Wild Kratts",
+    poster: "/assets/SeriesImages/wildkratts.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Animation, Education",
+    runtime: 22,
+    snippet: "The Kratt brothers use their creature power suits to learn about different animals and protect them from villains.",
+    href: "/SeriesReviews/wildkratts.html"
+},
+{
+    id: "ben10",
+    title: "Ben 10",
+    poster: "/assets/SeriesImages/ben10.png",
+    rating: 1.0,
+    year: 2005,
+    genre: "Animation, Action",
+    runtime: 22,
+    snippet: "A young boy discovers a mysterious watch that allows him to transform into various alien creatures to fight evil and protect the world.",
+    href: "/SeriesReviews/ben10.html"
+},
+{
+    id: "clarence",
+    title: "Clarence",
+    poster: "/assets/SeriesImages/clarence.png",
+    rating: 1.0,
+    year: 2014,
+    genre: "Animation, Comedy",
+    runtime: 11,
+    snippet: "An optimistic and adventurous boy finds excitement in everyday life with his two best friends in the fictional town of Aberdale.",
+    href: "/SeriesReviews/clarence.html"
+},
+{
+    id: "ninjago",
+    title: "Ninjago",
+    poster: "/assets/SeriesImages/ninjago.png",
+    rating: 1.0,
+    year: 2011,
+    genre: "Animation, Action",
+    runtime: 22,
+    snippet: "Six teenage ninja tasked with defending their island home from various supernatural threats using their elemental powers and martial arts skills.",
+    href: "/SeriesReviews/ninjago.html"
+},
+{
+    id: "riverdale",
+    title: "Riverdale",
+    poster: "/assets/SeriesImages/riverdale.png",
+    rating: 1.0,
+    year: 2017,
+    genre: "Drama, Mystery",
+    runtime: 45,
+    snippet: "A subversive take on Archie and his friends, exploring the surrealism of small-town life and the darkness and weirdness bubbling beneath Riverdale's surface.",
+    href: "/SeriesReviews/riverdale.html"
+},
+{
+    id: "stevenuniverse",
+    title: "Steven Universe",
+    poster: "/assets/SeriesImages/stevenuniverse.png",
+    rating: 1.0,
+    year: 2013,
+    genre: "Animation, Adventure",
+    runtime: 11,
+    snippet: "A young boy and his friends, the Crystal Gems, go on adventures and protect the world from evil using magical gem-based powers.",
+    href: "/SeriesReviews/stevenuniverse.html"
+},
+{
+    id: "teentitansgo",
+    title: "Teen Titans Go",
+    poster: "/assets/SeriesImages/teentitansgo.png",
+    rating: 1.0,
+    year: 2013,
+    genre: "Animation, Comedy",
+    runtime: 11,
+    snippet: "The teenage superheroes Robin, Starfire, Raven, Beast Boy, and Cyborg return in this comedic take on their crime-fighting adventures.",
+    href: "/SeriesReviews/teentitansgo.html"
+},
+{
+    id: "unclegrandpa",
+    title: "Uncle Grandpa",
+    poster: "/assets/SeriesImages/unclegrandpa.png",
+    rating: 1.0,
+    year: 2013,
+    genre: "Animation, Comedy",
+    runtime: 11,
+    snippet: "A magical uncle and grandpa who travels around in his RV helping children with their problems in bizarre and surreal ways.",
+    href: "/SeriesReviews/unclegrandpa.html"
+},
+{
+    id: "strangerthings",
+    title: "Stranger Things",
+    poster: "/assets/SeriesImages/strangerthings.png",
+    rating: 1.0,
+    year: 2016,
+    genre: "Sci-Fi, Horror",
+    runtime: 51,
+    snippet: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+    href: "/SeriesReviews/strangerthings.html"
+},
+{
+    id: "thegarfieldshow",
+    title: "The Garfield Show",
+    poster: "/assets/SeriesImages/thegarfieldshow.png",
+    rating: 1.0,
+    year: 2009,
+    genre: "Animation, Comedy",
+    runtime: 22,
+    snippet: "The lazy, lasagna-loving cat Garfield continues his hilarious adventures with owner Jon Arbuckle and dim-witted dog Odie in this modern animated series.",
+    href: "/SeriesReviews/thegarfieldshow.html"
+}
+    ];
+
+    // State
+    let viewMode = 'grid'; // 'grid' or 'list'
+    let sortBy = 'rating';
+    let filterGenre = 'all';
+    let searchQuery = '';
+    let currentPage = 1;
+    const moviesPerPage = 32; // Changed from 50 to 12 for better UX with movie posters
+    let movies = [...sampleMovies]; // base
+
+    // DOM
+    const moviesGrid = document.getElementById('moviesGrid');
+    const genreSelect = document.getElementById('genre');
+    const sortSelect = document.getElementById('sort');
+    const searchInput = document.getElementById('search');
+    const clearSearchBtn = document.getElementById('clearSearch');
+    const gridBtn = document.getElementById('gridView');
+    const listBtn = document.getElementById('listView');
+    const movieCountEl = document.getElementById('movieCount');
+    const loadMoreContainer = document.getElementById('loadMoreContainer');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const remainingCountEl = document.getElementById('remainingCount');
+
+    // Filter movies based on search query
+    function filterMoviesBySearch(movies, query) {
+      if (!query.trim()) return movies;
+      
+      const searchTerm = query.toLowerCase().trim();
+      return movies.filter(movie => 
+        movie.title.toLowerCase().includes(searchTerm) ||
+        movie.genre.toLowerCase().includes(searchTerm) ||
+        movie.snippet.toLowerCase().includes(searchTerm)
+      );
+    }
+
+    // Get paginated movies
+    function getPaginatedMovies(movies, page, perPage) {
+      const startIndex = (page - 1) * perPage;
+      const endIndex = startIndex + perPage;
+      return movies.slice(0, endIndex); // Load all movies up to current page
+    }
+
+    // Check if there are more movies to load
+    function hasMoreMovies(movies, page, perPage) {
+      return page * perPage < movies.length;
+    }
+
+    // Render function
+    function renderMovies(resetPage = false) {
+      if (resetPage) {
+      }
+
+      // filter by genre and search
+      const genreFiltered = movies.filter(m => filterGenre === 'all' || m.genre === filterGenre);
+      const searchFiltered = filterMoviesBySearch(genreFiltered, searchQuery);
+
+      // sort
+      const sorted = searchFiltered.slice().sort((a, b) => {
+        if (sortBy === 'rating') return b.rating - a.rating;
+        if (sortBy === 'year') return b.year - a.year;
+        if (sortBy === 'title') return a.title.localeCompare(b.title);
+        return 0;
+      });
+
+      // get paginated results
+      const paginatedMovies = getPaginatedMovies(sorted, currentPage, moviesPerPage);
+      const totalFilteredMovies = sorted.length;
+      const hasMore = hasMoreMovies(sorted, currentPage, moviesPerPage);
+
+      // update count - show both loaded and total
+      const loadedCount = paginatedMovies.length;
+      movieCountEl.textContent = `${loadedCount} of ${totalFilteredMovies} movie${totalFilteredMovies !== 1 ? 's' : ''}`;
+
+      // show/hide load more button
+      if (hasMore && totalFilteredMovies > moviesPerPage) {
+        loadMoreContainer.style.display = 'block';
+        const remaining = totalFilteredMovies - loadedCount;
+        remainingCountEl.textContent = `(${remaining} more)`;
+      } else {
+        loadMoreContainer.style.display = 'none';
+      }
+
+      // render movies
+      moviesGrid.innerHTML = '';
+      
+      if (paginatedMovies.length === 0) {
+        moviesGrid.innerHTML = `
+          <div class="no-results">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <h3>No movies found</h3>
+            <p>Try adjusting your search or filter criteria</p>
+          </div>
+        `;
+        return;
+      }
+
+      paginatedMovies.forEach(m => {
+        // create anchor card
+        const a = document.createElement('a');
+        a.className = 'movie-card';
+        a.href = m.href;
+        a.setAttribute('aria-label', `${m.title} (${m.year}) - open review page`);
+        a.innerHTML = `
+          <div class="card-inner">
+            <div class="card-media">
+              <img src="${m.poster}" alt="${m.title} poster" loading="lazy">
+            </div>
+            <div class="card-body">
+              <h3 class="title">${m.title}</h3>
+              <div class="meta-line">
+                <span class="meta year">${m.year}</span>
+                <span class="meta sep">|</span>
+                <span class="meta genre">${m.genre}</span>
+                <span class="meta sep">|</span>
+                <span class="meta runtime">${m.runtime} min</span>
+              </div>
+              <p class="rating">${m.rating.toFixed(1)}</p>
+              <p class="review-snippet">${m.snippet}</p>
+            </div>
+          </div>
+        `;
+        moviesGrid.appendChild(a);
+      });
+
+      // update view classes so CSS hides/shows appropriately
+      if (viewMode === 'grid') {
+        moviesGrid.classList.add('grid-view');
+        moviesGrid.classList.remove('list-view');
+      } else {
+        moviesGrid.classList.add('list-view');
+        moviesGrid.classList.remove('grid-view');
+      }
+
+      // Scroll to top when filters change (but not when loading more)
+      if (resetPage) {
+      }
+    }
+
+    // Load more movies
+    function loadMoreMovies() {
+      currentPage++;
+      renderMovies(false);
+
+    }
+
+    // Event handlers
+    genreSelect.addEventListener('change', (e) => {
+      filterGenre = e.target.value;
+      renderMovies(true); // Reset to page 1
+    });
+
+    sortSelect.addEventListener('change', (e) => {
+      sortBy = e.target.value;
+      renderMovies(true); // Reset to page 1
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      // Show/hide clear button
+      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+      renderMovies(true); // Reset to page 1
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      renderMovies(true); // Reset to page 1
+      searchInput.focus();
+    });
+
+    // Clear search on Escape key
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.style.display = 'none';
+        renderMovies(true); // Reset to page 1
+      }
+    });
+
+    gridBtn.addEventListener('click', () => {
+      viewMode = 'grid';
+      gridBtn.classList.add('active');
+      gridBtn.setAttribute('aria-pressed', 'true');
+      listBtn.classList.remove('active');
+      listBtn.setAttribute('aria-pressed', 'false');
+      renderMovies(false); // Keep current page
+    });
+
+    listBtn.addEventListener('click', () => {
+      viewMode = 'list';
+      listBtn.classList.add('active');
+      listBtn.setAttribute('aria-pressed', 'true');
+      gridBtn.classList.remove('active');
+      gridBtn.setAttribute('aria-pressed', 'false');
+      renderMovies(false); // Keep current page
+    });
+
+    loadMoreBtn.addEventListener('click', loadMoreMovies);
+
+            // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const isActive = mobileMenuOverlay.classList.contains('active');
+      
+      if (isActive) {
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+      mobileMenuOverlay.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Event listeners
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+    
+    // Close mobile menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close mobile menu when clicking outside the menu
+    mobileMenuOverlay.addEventListener('click', (e) => {
+      if (e.target === mobileMenuOverlay) {
+        closeMobileMenu();
+      }
+    });
+    
+
+    // initial render
+    renderMovies(true);
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Social Media Section -->
+        <div class="footer-social">
+          <h4>Follow FrameDeer</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/framedeer" aria-label="Follow FrameDeer on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/FrameDeer" aria-label="Follow FrameDeer on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@FrameDeer" aria-label="Follow FrameDeer on YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Simple Legal Links -->
+        <div class="footer-legal">
+          <a href="/Docs/DISCLAIMER.pdf">Disclaimer</a>
+          <span>•</span>
+          <a href="/Docs/PRIVACY POLICY DOCUMENT.pdf">Privacy</a>
+        </div>
+        
+        <!-- Attribution Section -->
+        <div class="footer-attribution">
+          <p>This site uses information from IMDb, Letterboxd, Wikipedia, and other public sources for educational purposes under Fair Use.</p>
+          <p>All trademarks belong to their respective owners. No copyright infringement intended.</p>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> FrameDeer - Use For Educational Purposes</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
