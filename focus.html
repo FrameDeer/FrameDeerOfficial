@@ -1387,196 +1387,210 @@
     ];
 
     // State
-    let currentFilter = 'all';
-    let searchQuery = '';
-    let currentPage = 1;
-    const profilesPerPage = 20;
-    let profiles = [...sampleProfiles];
+let currentFilter = 'all';
+let searchQuery = '';
+let currentPage = 1;
+const profilesPerPage = 20;
+let profiles = [...sampleProfiles];
 
-    // DOM
-    const profilesGrid = document.getElementById('profilesGrid');
-    const searchInput = document.getElementById('searchInput');
-    const clearSearchBtn = document.getElementById('clearSearch');
-    const tabs = document.querySelectorAll('.tab');
-    const loadMoreContainer = document.getElementById('loadMoreContainer');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const resultsCountEl = document.getElementById('resultsCount');
+// DOM
+const profilesGrid = document.getElementById('profilesGrid');
+const searchInput = document.getElementById('searchInput');
+const clearSearchBtn = document.getElementById('clearSearch');
+const tabs = document.querySelectorAll('.tab');
+const loadMoreContainer = document.getElementById('loadMoreContainer');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+const resultsCountEl = document.getElementById('resultsCount');
 
-    // Filter profiles based on search query
-    function filterProfilesBySearch(profiles, query) {
-      if (!query.trim()) return profiles;
-      
-      const searchTerm = query.toLowerCase().trim();
-      return profiles.filter(profile => 
-        profile.name.toLowerCase().includes(searchTerm) ||
-        profile.role.toLowerCase().includes(searchTerm)
-      );
-    }
+// Normalize text by removing accents and special characters
+function normalizeText(text) {
+  return text.normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove accents
+    .replace(/[őóö]/g, 'o') // Handle Hungarian o variants
+    .replace(/[úüű]/g, 'u') // Handle Hungarian u variants
+    .replace(/[éèêë]/g, 'e') // Handle e variants
+    .replace(/[áàâä]/g, 'a') // Handle a variants
+    .replace(/[íìîï]/g, 'i') // Handle i variants
+    .toLowerCase();
+}
 
-    // Get paginated profiles
-    function getPaginatedProfiles(profiles, page, perPage) {
-      const startIndex = (page - 1) * perPage;
-      const endIndex = startIndex + perPage;
-      return profiles.slice(0, endIndex);
-    }
-
-    // Check if there are more profiles to load
-    function hasMoreProfiles(profiles, page, perPage) {
-      return page * perPage < profiles.length;
-    }
-
-    // Render function
-    function renderProfiles(resetPage = false) {
-      if (resetPage) {
-        currentPage = 1;
-      }
-
-      // Filter by type and search
-      const typeFiltered = profiles.filter(p => currentFilter === 'all' || p.type === currentFilter);
-      const searchFiltered = filterProfilesBySearch(typeFiltered, searchQuery);
-
-      // Get paginated results
-      const paginatedProfiles = getPaginatedProfiles(searchFiltered, currentPage, profilesPerPage);
-      const totalFilteredProfiles = searchFiltered.length;
-      const hasMore = hasMoreProfiles(searchFiltered, currentPage, profilesPerPage);
-
-      // Update count - show both loaded and total
-      const loadedCount = paginatedProfiles.length;
-      resultsCountEl.textContent = `Showing ${loadedCount} of ${totalFilteredProfiles} results`;
-
-      // Show/hide load more button
-      if (hasMore && totalFilteredProfiles > profilesPerPage) {
-        loadMoreContainer.style.display = 'block';
-      } else {
-        loadMoreContainer.style.display = 'none';
-      }
-
-      // Render profiles
-      profilesGrid.innerHTML = '';
-      
-      if (paginatedProfiles.length === 0) {
-        profilesGrid.innerHTML = `
-          <div class="no-results">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <h3>No profiles found</h3>
-            <p>Try adjusting your search or filter criteria</p>
-          </div>
-        `;
-        return;
-      }
-
-      paginatedProfiles.forEach(p => {
-        const profileCard = document.createElement('a');
-        profileCard.className = 'profile-card';
-        profileCard.href = p.href;
-        profileCard.setAttribute('data-type', p.type);
-        profileCard.setAttribute('aria-label', `${p.name} - open profile page`);
-        profileCard.innerHTML = `
-          <div class="profile-img">
-            <img src="${p.image}" alt="${p.name}" loading="lazy">
-          </div>
-          <div class="profile-info">
-            <h3>${p.name}</h3>
-            <p class="role">${p.role}</p>
-            <span class="btn-outline">View Full Profile</span>
-          </div>
-        `;
-        profilesGrid.appendChild(profileCard);
-      });
-    }
-
-    // Load more profiles
-    function loadMoreProfiles() {
-      currentPage++;
-      renderProfiles(false);
-    }
-
-    // Event handlers
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        currentFilter = tab.getAttribute('data-filter');
-        renderProfiles(true);
-      });
-    });
-
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      // Show/hide clear button
-      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
-      renderProfiles(true);
-    });
-
-    clearSearchBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      searchQuery = '';
-      clearSearchBtn.style.display = 'none';
-      renderProfiles(true);
-      searchInput.focus();
-    });
-
-    // Clear search on Escape key
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        searchInput.value = '';
-        searchQuery = '';
-        clearSearchBtn.style.display = 'none';
-        renderProfiles(true);
-      }
-    });
-
-    loadMoreBtn.addEventListener('click', loadMoreProfiles);
-
-    // Mobile menu functionality
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+// Filter profiles based on search query with accent-insensitive search
+function filterProfilesBySearch(profiles, query) {
+  if (!query.trim()) return profiles;
+  
+  const searchTerm = normalizeText(query.trim());
+  return profiles.filter(profile => {
+    const normalizedName = normalizeText(profile.name);
+    const normalizedRole = normalizeText(profile.role);
     
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-      const isActive = mobileMenuOverlay.classList.contains('active');
-      
-      if (isActive) {
-        mobileMenuOverlay.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      } else {
-        mobileMenuOverlay.classList.add('active');
-        mobileMenuBtn.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-    
-    // Close mobile menu
-    function closeMobileMenu() {
-      mobileMenuOverlay.classList.remove('active');
-      mobileMenuBtn.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-    
-    // Event listeners
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    closeMenuBtn.addEventListener('click', closeMobileMenu);
-    
-    // Close mobile menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-    
-    // Close mobile menu when clicking outside the menu
-    mobileMenuOverlay.addEventListener('click', (e) => {
-      if (e.target === mobileMenuOverlay) {
-        closeMobileMenu();
-      }
-    });
+    return normalizedName.includes(searchTerm) || normalizedRole.includes(searchTerm);
+  });
+}
 
-    // Set current year in footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+// Get paginated profiles
+function getPaginatedProfiles(profiles, page, perPage) {
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  return profiles.slice(0, endIndex);
+}
 
-    // Initial render
+// Check if there are more profiles to load
+function hasMoreProfiles(profiles, page, perPage) {
+  return page * perPage < profiles.length;
+}
+
+// Render function
+function renderProfiles(resetPage = false) {
+  if (resetPage) {
+    currentPage = 1;
+  }
+
+  // Filter by type and search
+  const typeFiltered = profiles.filter(p => currentFilter === 'all' || p.type === currentFilter);
+  const searchFiltered = filterProfilesBySearch(typeFiltered, searchQuery);
+
+  // Get paginated results
+  const paginatedProfiles = getPaginatedProfiles(searchFiltered, currentPage, profilesPerPage);
+  const totalFilteredProfiles = searchFiltered.length;
+  const hasMore = hasMoreProfiles(searchFiltered, currentPage, profilesPerPage);
+
+  // Update count - show both loaded and total
+  const loadedCount = paginatedProfiles.length;
+  resultsCountEl.textContent = `Showing ${loadedCount} of ${totalFilteredProfiles} results`;
+
+  // Show/hide load more button
+  if (hasMore && totalFilteredProfiles > profilesPerPage) {
+    loadMoreContainer.style.display = 'block';
+  } else {
+    loadMoreContainer.style.display = 'none';
+  }
+
+  // Render profiles
+  profilesGrid.innerHTML = '';
+  
+  if (paginatedProfiles.length === 0) {
+    profilesGrid.innerHTML = `
+      <div class="no-results">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <h3>No profiles found</h3>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+    `;
+    return;
+  }
+
+  paginatedProfiles.forEach(p => {
+    const profileCard = document.createElement('a');
+    profileCard.className = 'profile-card';
+    profileCard.href = p.href;
+    profileCard.setAttribute('data-type', p.type);
+    profileCard.setAttribute('aria-label', `${p.name} - open profile page`);
+    profileCard.innerHTML = `
+      <div class="profile-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="profile-info">
+        <h3>${p.name}</h3>
+        <p class="role">${p.role}</p>
+        <span class="btn-outline">View Full Profile</span>
+      </div>
+    `;
+    profilesGrid.appendChild(profileCard);
+  });
+}
+
+// Load more profiles
+function loadMoreProfiles() {
+  currentPage++;
+  renderProfiles(false);
+}
+
+// Event handlers
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentFilter = tab.getAttribute('data-filter');
     renderProfiles(true);
+  });
+});
+
+searchInput.addEventListener('input', (e) => {
+  searchQuery = e.target.value;
+  // Show/hide clear button
+  clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+  renderProfiles(true);
+});
+
+clearSearchBtn.addEventListener('click', () => {
+  searchInput.value = '';
+  searchQuery = '';
+  clearSearchBtn.style.display = 'none';
+  renderProfiles(true);
+  searchInput.focus();
+});
+
+// Clear search on Escape key
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    searchQuery = '';
+    clearSearchBtn.style.display = 'none';
+    renderProfiles(true);
+  }
+});
+
+loadMoreBtn.addEventListener('click', loadMoreProfiles);
+
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+  const isActive = mobileMenuOverlay.classList.contains('active');
+  
+  if (isActive) {
+    mobileMenuOverlay.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  } else {
+    mobileMenuOverlay.classList.add('active');
+    mobileMenuBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+// Close mobile menu
+function closeMobileMenu() {
+  mobileMenuOverlay.classList.remove('active');
+  mobileMenuBtn.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Event listeners
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+// Close mobile menu when a link is clicked
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+// Close mobile menu when clicking outside the menu
+mobileMenuOverlay.addEventListener('click', (e) => {
+  if (e.target === mobileMenuOverlay) {
+    closeMobileMenu();
+  }
+});
+
+// Set current year in footer
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Initial render
+renderProfiles(true);
   </script>
 </body>
 </html>

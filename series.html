@@ -98,12 +98,14 @@
           <option value="Mystery">Mystery</option>
         </select>
 
-        <label for="sort">Sort by:</label>
-        <select id="sort">
-          <option value="rating">Rating</option>
-          <option value="year">Year</option>
-          <option value="title">Title</option>
-        </select>
+            <label for="sort">Sort by:</label>
+    <select id="sort">
+    <option value="rating-high">Rating: High to Low</option>
+    <option value="rating-low">Rating: Low to High</option>
+    <option value="year-new">Newest Releases</option>
+    <option value="year-old">Oldest Releases</option>
+    <option value="title">Title A-Z</option>
+    </select>
 
         <!-- Search Bar -->
         <div class="search-container">
@@ -931,252 +933,265 @@
     ];
 
     // State
-    let viewMode = 'grid'; // 'grid' or 'list'
-    let sortBy = 'rating';
-    let filterGenre = 'all';
-    let searchQuery = '';
-    let currentPage = 1;
-    const moviesPerPage = 32; // Changed from 50 to 12 for better UX with movie posters
-    let movies = [...sampleMovies]; // base
+let viewMode = 'grid'; // 'grid' or 'list'
+let sortBy = 'rating-high'; // Updated with new sort options
+let filterGenre = 'all';
+let searchQuery = '';
+let currentPage = 1;
+const moviesPerPage = 32;
+let movies = [...sampleMovies]; // base
 
-    // DOM
-    const moviesGrid = document.getElementById('moviesGrid');
-    const genreSelect = document.getElementById('genre');
-    const sortSelect = document.getElementById('sort');
-    const searchInput = document.getElementById('search');
-    const clearSearchBtn = document.getElementById('clearSearch');
-    const gridBtn = document.getElementById('gridView');
-    const listBtn = document.getElementById('listView');
-    const movieCountEl = document.getElementById('movieCount');
-    const loadMoreContainer = document.getElementById('loadMoreContainer');
-    const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const remainingCountEl = document.getElementById('remainingCount');
+// DOM
+const moviesGrid = document.getElementById('moviesGrid');
+const genreSelect = document.getElementById('genre');
+const sortSelect = document.getElementById('sort');
+const searchInput = document.getElementById('search');
+const clearSearchBtn = document.getElementById('clearSearch');
+const gridBtn = document.getElementById('gridView');
+const listBtn = document.getElementById('listView');
+const movieCountEl = document.getElementById('movieCount');
+const loadMoreContainer = document.getElementById('loadMoreContainer');
+const loadMoreBtn = document.getElementById('loadMoreBtn');
+const remainingCountEl = document.getElementById('remainingCount');
 
-    // Filter movies based on search query
-    function filterMoviesBySearch(movies, query) {
-      if (!query.trim()) return movies;
-      
-      const searchTerm = query.toLowerCase().trim();
-      return movies.filter(movie => 
-        movie.title.toLowerCase().includes(searchTerm) ||
-        movie.genre.toLowerCase().includes(searchTerm) ||
-        movie.snippet.toLowerCase().includes(searchTerm)
-      );
-    }
+// Normalize text by removing diacritics and special characters
+function normalizeText(text) {
+  return text.normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Remove diacritics
+    .toLowerCase()
+    .trim();
+}
 
-    // Get paginated movies
-    function getPaginatedMovies(movies, page, perPage) {
-      const startIndex = (page - 1) * perPage;
-      const endIndex = startIndex + perPage;
-      return movies.slice(0, endIndex); // Load all movies up to current page
-    }
+// Filter movies based on search query with special character handling
+function filterMoviesBySearch(movies, query) {
+  if (!query.trim()) return movies;
+  
+  const searchTerm = normalizeText(query);
+  return movies.filter(movie => {
+    const normalizedTitle = normalizeText(movie.title);
+    const normalizedGenre = normalizeText(movie.genre);
+    const normalizedSnippet = normalizeText(movie.snippet);
+    
+    return normalizedTitle.includes(searchTerm) ||
+           normalizedGenre.includes(searchTerm) ||
+           normalizedSnippet.includes(searchTerm);
+  });
+}
 
-    // Check if there are more movies to load
-    function hasMoreMovies(movies, page, perPage) {
-      return page * perPage < movies.length;
-    }
+// Get paginated movies
+function getPaginatedMovies(movies, page, perPage) {
+  const startIndex = (page - 1) * perPage;
+  const endIndex = startIndex + perPage;
+  return movies.slice(0, endIndex);
+}
 
-    // Render function
-    function renderMovies(resetPage = false) {
-      if (resetPage) {
-      }
+// Check if there are more movies to load
+function hasMoreMovies(movies, page, perPage) {
+  return page * perPage < movies.length;
+}
 
-      // filter by genre and search
-      const genreFiltered = movies.filter(m => filterGenre === 'all' || m.genre === filterGenre);
-      const searchFiltered = filterMoviesBySearch(genreFiltered, searchQuery);
+// Render function
+function renderMovies(resetPage = false) {
+  if (resetPage) {
+    currentPage = 1;
+  }
 
-      // sort
-      const sorted = searchFiltered.slice().sort((a, b) => {
-        if (sortBy === 'rating') return b.rating - a.rating;
-        if (sortBy === 'year') return b.year - a.year;
-        if (sortBy === 'title') return a.title.localeCompare(b.title);
-        return 0;
-      });
+  // filter by genre and search
+  const genreFiltered = movies.filter(m => filterGenre === 'all' || m.genre === filterGenre);
+  const searchFiltered = filterMoviesBySearch(genreFiltered, searchQuery);
 
-      // get paginated results
-      const paginatedMovies = getPaginatedMovies(sorted, currentPage, moviesPerPage);
-      const totalFilteredMovies = sorted.length;
-      const hasMore = hasMoreMovies(sorted, currentPage, moviesPerPage);
+  // sort - updated with new sort options
+  const sorted = searchFiltered.slice().sort((a, b) => {
+    // Rating sorts
+    if (sortBy === 'rating-high') return b.rating - a.rating;
+    if (sortBy === 'rating-low') return a.rating - b.rating;
+    
+    // Year sorts (newest/oldest)
+    if (sortBy === 'year-new') return b.year - a.year;
+    if (sortBy === 'year-old') return a.year - b.year;
+    
+    // Title sort
+    if (sortBy === 'title') return a.title.localeCompare(b.title);
+    
+    return 0;
+  });
 
-      // update count - show both loaded and total
-      const loadedCount = paginatedMovies.length;
-      movieCountEl.textContent = `${loadedCount} of ${totalFilteredMovies} movie${totalFilteredMovies !== 1 ? 's' : ''}`;
+  // get paginated results
+  const paginatedMovies = getPaginatedMovies(sorted, currentPage, moviesPerPage);
+  const totalFilteredMovies = sorted.length;
+  const hasMore = hasMoreMovies(sorted, currentPage, moviesPerPage);
 
-      // show/hide load more button
-      if (hasMore && totalFilteredMovies > moviesPerPage) {
-        loadMoreContainer.style.display = 'block';
-        const remaining = totalFilteredMovies - loadedCount;
-        remainingCountEl.textContent = `(${remaining} more)`;
-      } else {
-        loadMoreContainer.style.display = 'none';
-      }
+  // update count - show both loaded and total
+  const loadedCount = paginatedMovies.length;
+  movieCountEl.textContent = `${loadedCount} of ${totalFilteredMovies} movie${totalFilteredMovies !== 1 ? 's' : ''}`;
 
-      // render movies
-      moviesGrid.innerHTML = '';
-      
-      if (paginatedMovies.length === 0) {
-        moviesGrid.innerHTML = `
-          <div class="no-results">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <h3>No movies found</h3>
-            <p>Try adjusting your search or filter criteria</p>
+  // show/hide load more button
+  if (hasMore && totalFilteredMovies > moviesPerPage) {
+    loadMoreContainer.style.display = 'block';
+    const remaining = totalFilteredMovies - loadedCount;
+    remainingCountEl.textContent = `(${remaining} more)`;
+  } else {
+    loadMoreContainer.style.display = 'none';
+  }
+
+  // render movies
+  moviesGrid.innerHTML = '';
+  
+  if (paginatedMovies.length === 0) {
+    moviesGrid.innerHTML = `
+      <div class="no-results">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <h3>No movies found</h3>
+        <p>Try adjusting your search or filter criteria</p>
+      </div>
+    `;
+    return;
+  }
+
+  paginatedMovies.forEach(m => {
+    // create anchor card
+    const a = document.createElement('a');
+    a.className = 'movie-card';
+    a.href = m.href;
+    a.setAttribute('aria-label', `${m.title} (${m.year}) - open review page`);
+    a.innerHTML = `
+      <div class="card-inner">
+        <div class="card-media">
+          <img src="${m.poster}" alt="${m.title} poster" loading="lazy">
+        </div>
+        <div class="card-body">
+          <h3 class="title">${m.title}</h3>
+          <div class="meta-line">
+            <span class="meta year">${m.year}</span>
+            <span class="meta sep">|</span>
+            <span class="meta genre">${m.genre}</span>
+            <span class="meta sep">|</span>
+            <span class="meta runtime">${m.runtime} min</span>
           </div>
-        `;
-        return;
-      }
+          <p class="rating">${m.rating.toFixed(1)}</p>
+          <p class="review-snippet">${m.snippet}</p>
+        </div>
+      </div>
+    `;
+    moviesGrid.appendChild(a);
+  });
 
-      paginatedMovies.forEach(m => {
-        // create anchor card
-        const a = document.createElement('a');
-        a.className = 'movie-card';
-        a.href = m.href;
-        a.setAttribute('aria-label', `${m.title} (${m.year}) - open review page`);
-        a.innerHTML = `
-          <div class="card-inner">
-            <div class="card-media">
-              <img src="${m.poster}" alt="${m.title} poster" loading="lazy">
-            </div>
-            <div class="card-body">
-              <h3 class="title">${m.title}</h3>
-              <div class="meta-line">
-                <span class="meta year">${m.year}</span>
-                <span class="meta sep">|</span>
-                <span class="meta genre">${m.genre}</span>
-                <span class="meta sep">|</span>
-                <span class="meta runtime">${m.runtime} min</span>
-              </div>
-              <p class="rating">${m.rating.toFixed(1)}</p>
-              <p class="review-snippet">${m.snippet}</p>
-            </div>
-          </div>
-        `;
-        moviesGrid.appendChild(a);
-      });
+  // update view classes so CSS hides/shows appropriately
+  if (viewMode === 'grid') {
+    moviesGrid.classList.add('grid-view');
+    moviesGrid.classList.remove('list-view');
+  } else {
+    moviesGrid.classList.add('list-view');
+    moviesGrid.classList.remove('grid-view');
+  }
 
-      // update view classes so CSS hides/shows appropriately
-      if (viewMode === 'grid') {
-        moviesGrid.classList.add('grid-view');
-        moviesGrid.classList.remove('list-view');
-      } else {
-        moviesGrid.classList.add('list-view');
-        moviesGrid.classList.remove('grid-view');
-      }
+  // Scroll to top when filters change (but not when loading more)
+  if (resetPage) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
 
-      // Scroll to top when filters change (but not when loading more)
-      if (resetPage) {
-      }
-    }
+// Load more movies
+function loadMoreMovies() {
+  currentPage++;
+  renderMovies(false);
+}
 
-    // Load more movies
-    function loadMoreMovies() {
-      currentPage++;
-      renderMovies(false);
+// Event handlers
+genreSelect.addEventListener('change', (e) => {
+  filterGenre = e.target.value;
+  renderMovies(true);
+});
 
-    }
+sortSelect.addEventListener('change', (e) => {
+  sortBy = e.target.value;
+  renderMovies(true);
+});
 
-    // Event handlers
-    genreSelect.addEventListener('change', (e) => {
-      filterGenre = e.target.value;
-      renderMovies(true); // Reset to page 1
-    });
+searchInput.addEventListener('input', (e) => {
+  searchQuery = e.target.value;
+  clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+  renderMovies(true);
+});
 
-    sortSelect.addEventListener('change', (e) => {
-      sortBy = e.target.value;
-      renderMovies(true); // Reset to page 1
-    });
+clearSearchBtn.addEventListener('click', () => {
+  searchInput.value = '';
+  searchQuery = '';
+  clearSearchBtn.style.display = 'none';
+  renderMovies(true);
+  searchInput.focus();
+});
 
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      // Show/hide clear button
-      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
-      renderMovies(true); // Reset to page 1
-    });
-
-    clearSearchBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      searchQuery = '';
-      clearSearchBtn.style.display = 'none';
-      renderMovies(true); // Reset to page 1
-      searchInput.focus();
-    });
-
-    // Clear search on Escape key
-    searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        searchInput.value = '';
-        searchQuery = '';
-        clearSearchBtn.style.display = 'none';
-        renderMovies(true); // Reset to page 1
-      }
-    });
-
-    gridBtn.addEventListener('click', () => {
-      viewMode = 'grid';
-      gridBtn.classList.add('active');
-      gridBtn.setAttribute('aria-pressed', 'true');
-      listBtn.classList.remove('active');
-      listBtn.setAttribute('aria-pressed', 'false');
-      renderMovies(false); // Keep current page
-    });
-
-    listBtn.addEventListener('click', () => {
-      viewMode = 'list';
-      listBtn.classList.add('active');
-      listBtn.setAttribute('aria-pressed', 'true');
-      gridBtn.classList.remove('active');
-      gridBtn.setAttribute('aria-pressed', 'false');
-      renderMovies(false); // Keep current page
-    });
-
-    loadMoreBtn.addEventListener('click', loadMoreMovies);
-
-            // Mobile menu functionality
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const closeMenuBtn = document.getElementById('closeMenuBtn');
-    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-    
-    // Toggle mobile menu
-    function toggleMobileMenu() {
-      const isActive = mobileMenuOverlay.classList.contains('active');
-      
-      if (isActive) {
-        mobileMenuOverlay.classList.remove('active');
-        mobileMenuBtn.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      } else {
-        mobileMenuOverlay.classList.add('active');
-        mobileMenuBtn.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-    
-    // Close mobile menu
-    function closeMobileMenu() {
-      mobileMenuOverlay.classList.remove('active');
-      mobileMenuBtn.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-    
-    // Event listeners
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    closeMenuBtn.addEventListener('click', closeMobileMenu);
-    
-    // Close mobile menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', closeMobileMenu);
-    });
-    
-    // Close mobile menu when clicking outside the menu
-    mobileMenuOverlay.addEventListener('click', (e) => {
-      if (e.target === mobileMenuOverlay) {
-        closeMobileMenu();
-      }
-    });
-    
-
-    // initial render
+searchInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    searchInput.value = '';
+    searchQuery = '';
+    clearSearchBtn.style.display = 'none';
     renderMovies(true);
+  }
+});
+
+gridBtn.addEventListener('click', () => {
+  viewMode = 'grid';
+  gridBtn.classList.add('active');
+  gridBtn.setAttribute('aria-pressed', 'true');
+  listBtn.classList.remove('active');
+  listBtn.setAttribute('aria-pressed', 'false');
+  renderMovies(false);
+});
+
+listBtn.addEventListener('click', () => {
+  viewMode = 'list';
+  listBtn.classList.add('active');
+  listBtn.setAttribute('aria-pressed', 'true');
+  gridBtn.classList.remove('active');
+  gridBtn.setAttribute('aria-pressed', 'false');
+  renderMovies(false);
+});
+
+loadMoreBtn.addEventListener('click', loadMoreMovies);
+
+// Mobile menu functionality
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const closeMenuBtn = document.getElementById('closeMenuBtn');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+function toggleMobileMenu() {
+  const isActive = mobileMenuOverlay.classList.contains('active');
+  
+  if (isActive) {
+    mobileMenuOverlay.classList.remove('active');
+    mobileMenuBtn.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  } else {
+    mobileMenuOverlay.classList.add('active');
+    mobileMenuBtn.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeMobileMenu() {
+  mobileMenuOverlay.classList.remove('active');
+  mobileMenuBtn.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+mobileNavLinks.forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
+});
+
+mobileMenuOverlay.addEventListener('click', (e) => {
+  if (e.target === mobileMenuOverlay) {
+    closeMobileMenu();
+  }
+});
+
+// initial render
+renderMovies(true);
   </script>
 
   <!-- Footer -->
