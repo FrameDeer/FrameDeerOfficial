@@ -24,20 +24,20 @@ const MOVIE_POOL = [
   { id: 17, title: "Mad Max: Fury Road", poster: "/assets/MovieImages/", year: 2015, genre: "Action" },
   { id: 18, title: "Raiders of the Lost Ark", poster: "/assets/MovieImages/raidersofthelostark.png", year: 1981, genre: "Adventure" },
   { id: 19, title: "Die Hard", poster: "/assets/MovieImages/diehard.png", year: 1988, genre: "Action" },
-  { id: 20, title: "Terminator 2: Judgment Day", poster: "/assets/MovieImages/terminator2", year: 1991, genre: "Action" },
+  { id: 20, title: "Terminator 2: Judgment Day", poster: "/assets/MovieImages/theterminator2.png", year: 1991, genre: "Action" },
   { id: 21, title: "Heat", poster: "/assets/MovieImages/heat.png", year: 1995, genre: "Crime" },
   { id: 22, title: "John Wick", poster: "/assets/MovieImages/johnwick.png", year: 2014, genre: "Action" },
-  { id: 23, title: "The Avengers", poster: "/assets/MovieImages/avengers", year: 2012, genre: "Action" },
-  { id: 24, title: "Mission: Impossible - Fallout", poster: "/assets/MovieImages/missionimpossible6.png", year: 2018, genre: "Action" },
+  { id: 23, title: "The Avengers", poster: "/assets/MovieImages/avengers.png", year: 2012, genre: "Action" },
+  { id: 24, title: "Mission: Impossible - Fallout", poster: "/assets/MovieImages/missionimpossiblefallout.png", year: 2018, genre: "Action" },
   
   // Horror & Thriller
   { id: 25, title: "Get Out", poster: "/assets/MovieImages/getout.png", year: 2017, genre: "Horror" },
-  { id: 26, title: "The Silence of the Lambs", poster: "/assets/MovieImages/thesilenceoflambs.png", year: 1991, genre: "Thriller" },
+  { id: 26, title: "The Silence of the Lambs", poster: "/assets/MovieImages/thesilenceofthelambs.png", year: 1991, genre: "Thriller" },
   { id: 27, title: "Insomnia", poster: "/assets/MovieImages/insomnia.png", year: 2002, genre: "Thriller" },
   { id: 28, title: "The Exorcist", poster: "/assets/MovieImages/theexorcist.png", year: 1973, genre: "Horror" },
   { id: 29, title: "Psycho", poster: "/assets/MovieImages/psycho.png", year: 1960, genre: "Thriller" },
   { id: 30, title: "A Quiet Place", poster: "/assets/MovieImages/aquietplace.png", year: 2018, genre: "Horror" },
-  { id: 31, title: "seven", poster: "/assets/MovieImages/seven.png", year: 1995, genre: "Thriller" },
+  { id: 31, title: "Se7en", poster: "/assets/MovieImages/seven.png", year: 1995, genre: "Thriller" },
   { id: 32, title: "The Thing", poster: "/assets/MovieImages/thething.png", year: 1982, genre: "Horror" },
   
   // Comedy & Romance
@@ -47,7 +47,7 @@ const MOVIE_POOL = [
   { id: 36, title: "When Harry Met Sally", poster: "/assets/MovieImages/whenharrymetsally", year: 1989, genre: "Romance" },
   { id: 37, title: "Groundhog Day", poster: "/assets/MovieImages/groundhogday.png", year: 1993, genre: "Comedy" },
   { id: 38, title: "La La Land", poster: "/assets/MovieImages/lalaland.png", year: 2016, genre: "Musical" },
-  { id: 39, title: "Singin' in the Rain", poster: "/assets/MovieImages/singinintherain.png", year: 1952, genre: "Musical" },
+  { id: 39, title: "Singin' in the Rain", poster: "/assets/MovieImages/singingintherain.png", year: 1952, genre: "Musical" },
   { id: 40, title: "The Big Lebowski", poster: "/assets/MovieImages/thebiglebowski.png", year: 1998, genre: "Comedy" },
   
   // International Cinema
@@ -78,7 +78,7 @@ const MOVIE_POOL = [
   { id: 61, title: "Wall-E", poster: "/assets/MovieImages/walle.png", year: 2008, genre: "Animation" },
   { id: 62, title: "Cars", poster: "/assets/MovieImages/cars.png", year: 2006, genre: "Animation" },
   { id: 63, title: "Jaws", poster: "/assets/MovieImages/jaws.png", year: 1975, genre: "Thriller" },
-  { id: 64, title: "Jurassic Park", poster: "/assets/MovieImages/jurrasicpark.png", year: 1993, genre: "Adventure" }
+  { id: 64, title: "Jurassic Park", poster: "/assets/MovieImages/jurassicpark.png", year: 1993, genre: "Adventure" }
 ];
 
 // Utility functions
