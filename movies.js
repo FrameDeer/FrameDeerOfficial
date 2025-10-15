@@ -37,7 +37,7 @@ const MOVIE_POOL = [
   { id: 28, title: "The Exorcist", poster: "/assets/MovieImages/theexorcist.png", year: 1973, genre: "Horror" },
   { id: 29, title: "Psycho", poster: "/assets/MovieImages/psycho.png", year: 1960, genre: "Thriller" },
   { id: 30, title: "A Quiet Place", poster: "/assets/MovieImages/aquietplace.png", year: 2018, genre: "Horror" },
-  { id: 31, title: "Se7en", poster: "/assets/MovieImages/se7en.png", year: 1995, genre: "Thriller" },
+  { id: 31, title: "seven", poster: "/assets/MovieImages/seven.png", year: 1995, genre: "Thriller" },
   { id: 32, title: "The Thing", poster: "/assets/MovieImages/thething.png", year: 1982, genre: "Horror" },
   
   // Comedy & Romance
