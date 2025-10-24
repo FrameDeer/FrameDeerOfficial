@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGJEB1784P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NGJEB1784P');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Actor</title>
+ <meta name="description" content="Browse FrameDeer's comprehensive TV series reviews collection. Filter by genre, search shows, and discover detailed analysis of television from classic to contemporary.">
+  <meta name="keywords" content="series reviews, TV show ratings, television analysis, series database, TV criticism, FrameDeer series">
+  <link rel="stylesheet" href="reviews.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo-title-container">
+        <a href="/index.html" class="logo-link">
+          <img src="/assets/logo/framedeer.png" alt="FrameDeer Logo - Movie Reviews and Ratings" class="nav-logo-img">
+        </a>
+        <a href="/index.html" class="nav-logo">FrameDeer</a>
+      </div>  
+      
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/movies.html">Movies</a></li>
+        <li><a href="/series.html">Series</a></li>
+        <li><a href="/focus.html">Focus</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/tournament.html">Tournament</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+        <span class="menu-line menu-line-1"></span>
+        <span class="menu-line menu-line-2"></span>
+        <span class="menu-line menu-line-3"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close mobile menu">
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/movies.html">Movies</a></li>
+      <li><a href="/series.html">Series</a></li>
+      <li><a href="/focus.html">Focus</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/tournament.html">Tournament</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </div>
+
+  <main class="container" style="padding: 1rem; max-width: 1100px; margin: 0 auto; margin-top: 2rem;">
+    <section id="profileSection" class="actor-profile"></section>
+    <section id="awardsSection" class="awards"></section>
+    <section id="filmographySection" class="filmography"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Social Media Section -->
+        <div class="footer-social">
+          <h4>Follow FrameDeer</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/framedeer" aria-label="Follow FrameDeer on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/FrameDeer" aria-label="Follow FrameDeer on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@FrameDeer" aria-label="Follow FrameDeer on YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Simple Legal Links -->
+        <div class="footer-legal">
+          <a href="/Docs/DISCLAIMER.pdf">Disclaimer</a>
+          <span>•</span>
+          <a href="/Docs/PRIVACY POLICY DOCUMENT.pdf">Privacy</a>
+        </div>
+        
+        <!-- Attribution Section -->
+        <div class="footer-attribution">
+          <p>This site uses information from IMDb, Letterboxd, Wikipedia, and other public sources for educational purposes under Fair Use.</p>
+          <p>All trademarks belong to their respective owners. No copyright infringement intended.</p>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> FrameDeer - Use For Educational Purposes</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (s, r=document)=>r.querySelector(s);
+    const $$ = (s, r=document)=>Array.from(r.querySelectorAll(s));
+    const getParam = (n)=>new URLSearchParams(location.search).get(n);
+
+    function renderProfile(p){
+      const el = $('#profileSection');
+      const attrs = p.attributes || {};
+      const rows = Object.entries(attrs).map(([k,v])=>`<p><strong>${k.replace(/_/g,' ')}:</strong> ${v}</p>`).join('');
+      el.innerHTML = `
+        <section class="actor-profile" style="display:flex; gap: 1.5rem; align-items:flex-start; flex-wrap: wrap;">
+          <img src="${p.photo || ''}" alt="${p.name || ''}" class="actor-photo" style="width:220px; border-radius:8px;" />
+          <div class="actor-info">
+            <h1>${p.name || ''}</h1>
+            ${rows}
+            ${p.bio ? `<p class="bio">${p.bio}</p>`: ''}
+            ${(p.early_career?.paragraphs||[]).length ? `<div class="early-career"><h3>${p.early_career.title || 'Early Career'}</h3>${p.early_career.paragraphs.map(x=>`<p>${x}</p>`).join('')}</div>`:''}
+          </div>
+        </section>`;
+    }
+
+    function renderAwards(p){
+      const el = $('#awardsSection');
+      const items = p.awards || [];
+      if (!items.length){ el.innerHTML=''; return; }
+      el.innerHTML = `<h2>Major Awards</h2><ul>${items.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+    }
+
+    function renderFilmography(p){
+      const el = $('#filmographySection');
+      const major = p.filmography?.major || [];
+      const other = p.filmography?.other || [];
+      const majorHtml = major.map(m=>{
+        const movieId = m.link ? (m.link.match(/\/moviereviews\/([^/]+)\.html/i)||[])[1] : null;
+        const href = movieId ? `moviedetail.html?id=${encodeURIComponent(movieId)}` : (m.link || '#');
+        return `<a href="${href}" class="movie-card"><img src="${m.image || ''}" alt="${m.title || ''}"><p>${m.raw || m.title || ''}</p></a>`;
+      }).join('');
+      const otherHtml = other.map(o=>{
+        const movieId = o.link ? (o.link.match(/\/moviereviews\/([^/]+)\.html/i)||[])[1] : null;
+        const href = movieId ? `moviedetail.html?id=${encodeURIComponent(movieId)}` : (o.link || '#');
+        return `<a href="${href}" class="text-movie-link">${o.text || ''}</a>`;
+      }).join('');
+      el.innerHTML = `
+        <h2>Filmography</h2>
+        ${major.length ? `<div class="movie-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">${majorHtml}</div>`: ''}
+        ${other.length ? `<div class="text-movie-list"><h3>Other Notable Works</h3><div class="text-movie-grid">${otherHtml}</div></div>`: ''}
+      `;
+    }
+
+    async function main(){
+      const id = getParam('id');
+      if (!id){ $('#profileSection').innerHTML = '<p class="error">Missing actor id.</p>'; return; }
+      if (location.protocol === 'file:') {
+        $('#profileSection').innerHTML = '<p class="error">This page loads data via fetch. Please run a local server (e.g., <code>python3 -m http.server 5500</code>) and open <code>http://localhost:5500/actordetail.html?id='+id+'</code>.</p>';
+        return;
+      }
+      try{
+        const res = await fetch(new URL('actors.json', location.href));
+        if (!res.ok) throw new Error('actors.json HTTP '+res.status);
+        const data = await res.json();
+        const person = data[id];
+        if (!person){ $('#profileSection').innerHTML = '<p class="error">Actor not found for id: '+id+'</p>'; return; }
+        renderProfile(person);
+        renderAwards(person);
+        renderFilmography(person);
+      }catch(e){
+        console.error(e);
+        $('#profileSection').innerHTML = '<p class="error">Failed to load actor details. '+(e && e.message ? e.message : '')+'</p>';
+      }
+    }
+
+    main();
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+    function toggleMobileMenu() {
+      const isActive = mobileMenuOverlay.classList.contains('active');
+      if (isActive) {
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeMobileMenu() {
+      mobileMenuOverlay.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+    mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+  </script>
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

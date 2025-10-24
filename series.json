@@ -1,0 +1,2239 @@
+{
+  "berlin": {
+    "title": "Berlin",
+    "genre": "Crime, Drama, Thriller",
+    "seasons": "1",
+    "network": "Netflix",
+    "description": "A Money Heist prequel series focusing on the charismatic and unpredictable Berlin during his golden years before the events of the original series. Set in Paris, Berlin and his new crew attempt one of his most ambitious heists ever - stealing €44 million worth of jewels in a single afternoon.",
+    "ratings": {
+      "imdb": "7.1/10",
+      "letterboxd": "3.2/5",
+      "rotten tomatoes": "78%",
+      "framedeer": "8.6/10"
+    },
+    "poster": "/assets/seriesimages/berlin.png",
+    "trailer": "https://www.youtube.com/embed/Zm5n7Y6rcJ4",
+    "thoughts": {
+      "paragraphs": [
+        "Berlin successfully expands the Money Heist universeby focusing on one of its most compelling and morally complex characters. Pedro Alonso reprises his role as the charming, narcissistic, and unpredictable master thief, delivering a performance that both honors his original portrayal and explores new dimensions of the character.",
+        "The series wisely shifts from the political undertones of the original Money Heist to a more personal, character-driven narrative. Set during Berlin's \"golden years\" before his terminal illness diagnosis, the show captures him at his peak - brilliant, arrogant, and utterly captivating. The Paris setting provides a fresh backdrop that contrasts beautifully with the Spanish locations of the original series.",
+        "The new ensemble castbrings fresh energy while maintaining the chemistry that made Money Heist so compelling. Michelle Jenner's Keila, a brilliant cybersecurity expert, and Begoña Vargas's Cameron, a skilled locksmith, stand out as particularly strong additions to the heist crew. Their dynamic with Berlin creates the perfect balance of tension and camaraderie.",
+        "While the series maintains the signature Money Heist elements - intricate planning, unexpected twists, and high-stakes tension - it also carves its own identity with a more romantic, almost whimsical tone. Berlin's love story with Camille (Samantha Siqueiros) adds emotional depth to his character, revealing vulnerabilities that were only hinted at in the original series.",
+        "The heist itself is brilliantly conceived, focusing on stealing €44 million worth of jewels from an auction house in Paris. The planning sequences showcase Berlin's genius while allowing each crew member to demonstrate their unique skills. The series successfully balances the technical aspects of the heist with the emotional journeys of its characters.",
+        "Final verdict:A worthy addition to the Money Heist universe that deepens our understanding of one of its most fascinating characters. While it may not reach the revolutionary heights of the original, Berlin delivers an entertaining, stylish, and emotionally resonant heist drama that will satisfy both longtime fans and newcomers."
+      ],
+      "highlights": [
+        "Pedro Alonso's captivating performance as Berlin",
+        "Beautiful Parisian setting and cinematography",
+        "Strong new ensemble cast with great chemistry",
+        "Character-driven narrative with emotional depth",
+        "Intricate heist planning and execution",
+        "Perfect balance of tension, romance, and humor"
+      ]
+    },
+    "awards": [
+      {
+        "category": "Platino Awards",
+        "items": [
+          {
+            "result": "Nominated",
+            "award": "Best Ibero-American Series"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Actor - Pedro Alonso"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Supporting Actress - Michelle Jenner"
+          }
+        ]
+      },
+      {
+        "category": "Feroz Awards",
+        "items": [
+          {
+            "result": "Nominated",
+            "award": "Best Drama Series"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Actor - Pedro Alonso"
+          }
+        ]
+      },
+      {
+        "category": "Spanish Actors Union Awards",
+        "items": [
+          {
+            "result": "Nominated",
+            "award": "Best Television Actor - Pedro Alonso"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Television Actress - Michelle Jenner"
+          }
+        ]
+      }
+    ],
+    "cast": {
+      "creator": {
+        "name": "Álex Pina",
+        "link": "/DirectorReviews/alexpina.html",
+        "image": "/assets/focusimages/alexpina.png",
+        "roles": "Creator, Writer, Executive Producer"
+      },
+      "main": [
+        {
+          "name": "Pedro Alonso",
+          "character": "Andrés de Fonollosa (Berlin)",
+          "link": "/actorreviews/pedroalonso.html",
+          "image": "/assets/focusimages/pedroalonso.png"
+        },
+        {
+          "name": "Michelle Jenner",
+          "character": "Keila",
+          "link": "/actorreviews/michellejenner.html",
+          "image": "/assets/focusimages/michellejenner.png"
+        },
+        {
+          "name": "Begoña Vargas",
+          "character": "Cameron",
+          "link": "/actorreviews/begonavargas.html",
+          "image": "/assets/focusimages/begonavargas.png"
+        },
+        {
+          "name": "Tristán Ulloa",
+          "character": "Damián",
+          "link": "/actorreviews/tristanulloa.html",
+          "image": "/assets/focusimages/tristanulloa.png"
+        },
+        {
+          "name": "Julio Peña",
+          "character": "Roi",
+          "link": "/actorreviews/juliopena.html",
+          "image": "/assets/focusimages/juliopena.png"
+        },
+        {
+          "name": "Samantha Siqueiros",
+          "character": "Camille",
+          "link": "/actorreviews/samanthasiqueiros.html",
+          "image": "/assets/focusimages/samanthasiqueiros.png"
+        }
+      ],
+      "supporting": [
+        "Joel Sánchez as Bruce",
+        "Masi Rodríguez as Susi",
+        "Julien Paschal as Alain",
+        "Yuri D. Brown as Bertrand"
+      ]
+    },
+    "production": {
+      "original_release": "December 29, 2023",
+      "parts": null,
+      "episodes": "8 Episodes",
+      "locations": "Paris, France; Madrid, Spain",
+      "companies": "Netflix, Vancouver Media",
+      "language": "Spanish"
+    },
+    "making_of": {
+      "paragraphs": [
+        "Creating a prequel seriescentered on Berlin presented both opportunities and challenges for creator Álex Pina and his team. The goal was to explore the character's golden years while maintaining the essence that made him so compelling in Money Heist. The decision to set the series in Paris allowed for a fresh visual palette while maintaining the European sophistication that defines Berlin's character.",
+        "Pedro Alonso's return to the role required careful consideration of character continuity. Set before Berlin's terminal illness diagnosis in Money Heist, the series portrays him at the peak of his powers - more vibrant, more arrogant, and more dangerously charming. Alonso worked closely with the writers to ensure his performance honored the established character while exploring new dimensions.",
+        "The new ensemble castwas carefully selected to complement Berlin's personality while bringing their own unique energy. Michelle Jenner's Keila represents the technological expertise needed for modern heists, while Begoña Vargas's Cameron brings physical skill and emotional complexity. The chemistry between the cast members was developed through intensive rehearsals and workshops.",
+        "The Parisian setting influenced every aspect of production design, from the elegant auction house where the heist takes place to Berlin's luxurious apartment with its stunning views of the Eiffel Tower. The cinematography captures the romantic, almost dreamlike quality of Paris while maintaining the tension and urgency of a high-stakes heist.",
+        "The series faced the challenge of balancing fan expectations with creative innovation. While maintaining signature Money Heist elements like the strategic planning sequences and unexpected twists, Berlin carves its own identity with a more romantic, character-focused narrative that explores love, obsession, and the price of genius."
+      ],
+      "highlights": [
+        "Extensive location shooting in Paris",
+        "Character development for Berlin's backstory",
+        "New ensemble cast with fresh dynamics",
+        "Romantic Parisian aesthetic",
+        "Integration with Money Heist timeline",
+        "Sophisticated production design"
+      ]
+    },
+    "suggestions": [
+      {
+        "title": "Money Heist",
+        "link": "/seriesreviews/moneyheist.html",
+        "image": "/assets/seriesimages/moneyheist.png"
+      },
+      {
+        "title": "Lupin",
+        "link": "/seriesreviews/lupin.html",
+        "image": "/assets/seriesimages/lupin.png"
+      },
+      {
+        "title": "White Lines",
+        "link": "/seriesreviews/whitelines.html",
+        "image": "/assets/seriesimages/whitelines.png"
+      },
+      {
+        "title": "Elite",
+        "link": "/seriesreviews/elite.html",
+        "image": "/assets/seriesimages/elite.png"
+      },
+      {
+        "title": "Vis a Vis",
+        "link": "/seriesreviews/visavis.html",
+        "image": "/assets/seriesimages/visavis.png"
+      }
+    ],
+    "additional_info": {
+      "fun_facts": [
+        "Pedro Alonso initially had reservations about returning to the role of Berlin",
+        "The series was filmed extensively on location in Paris, including scenes at the Eiffel Tower",
+        "Berlin's apartment in the series features actual views of the Eiffel Tower",
+        "The crew's code names are inspired by famous artists and scientists",
+        "The series includes several subtle references to future Money Heist events"
+      ],
+      "cultural_impact": [
+        "Became one of Netflix's most-watched non-English series upon release",
+        "Renewed interest in the Money Heist universe and characters",
+        "Showcased Parisian locations to global audiences",
+        "Demonstrated the viability of character-focused spin-offs",
+        "Expanded the global appeal of Spanish-language television"
+      ],
+      "related": []
+    },
+    "year": "2023"
+  },
+  "columbo": {
+    "title": "Columbo (1968-2003)",
+    "genre": "Crime, Drama, Mystery",
+    "seasons": "10 + TV movies",
+    "network": "NBC, ABC",
+    "description": "A revolutionary detective series that inverted the classic whodunit formula. Each episode begins by showing the murder and the killer's identity, then follows Lieutenant Columbo - a seemingly disheveled, absent-minded LAPD homicide detective - as he methodically unravels the perfect crime through relentless questioning and attention to minute details.",
+    "ratings": {
+      "imdb": "8.2/10",
+      "letterboxd": "4.0/5",
+      "rotten tomatoes": "96%",
+      "framedeer": "9.3/10"
+    },
+    "poster": "/assets/seriesimages/columbo.png",
+    "trailer": "https://www.youtube.com/embed/l_mpCPfZb8c",
+    "thoughts": {
+      "paragraphs": [
+        "Columbo represents one of television's most brilliant detective creations, a series that completely redefined the crime drama genre by showing audiences the \"howcatchem\" rather than the whodunit. Peter Falk's portrayal of the rumpled, seemingly bumbling Lieutenant Columbo remains one of the most iconic and enduring characters in television history.",
+        "The series' genius lies in its inverted mystery structure. Unlike traditional detective shows where the audience tries to guess the killer alongside the detective, Columbo reveals the murderer and their methods in the opening act. The suspense then builds from watching Columbo's meticulous, almost psychological dissection of the perfect crime. His trademark \"just one more thing\" becomes the verbal trapdoor through which killers inevitably fall.",
+        "Peter Falk's performanceis nothing short of masterful. His Columbo appears deceptively simple - a disorganized man in a wrinkled raincoat driving a beat-up Peugeot - yet beneath this facade lies one of television's sharpest intellects. Falk brings warmth, humor, and relentless determination to the role, creating a character who feels genuinely human rather than a superhuman detective.",
+        "The series features an incredible roster of guest stars as the killers, including legendary actors like Jack Cassidy, William Shatner, Leonard Nimoy, and Johnny Cash. These antagonists are typically wealthy, sophisticated professionals who believe they've committed the perfect crime, making Columbo's working-class methodology all the more satisfying when he exposes their arrogance and flaws.",
+        "Columbo's investigative techniqueis a study in psychological warfare. He plays the fool to lull killers into false confidence, then methodically chips away at their alibis through seemingly innocent questions and observations. His approach demonstrates that the smallest details - a mismatched wine bottle, an incorrect time notation, a misplaced object - can unravel even the most elaborate criminal schemes.",
+        "Final verdict:A timeless masterpiece of detective fiction that continues to influence crime dramas decades after its debut. Columbo's unique formula, combined with Peter Falk's unforgettable performance, creates television that remains as compelling and brilliant today as when it first aired."
+      ],
+      "highlights": [
+        "Revolutionary inverted mystery structure",
+        "Peter Falk's iconic, Emmy-winning performance",
+        "Memorable \"just one more thing\" catchphrase",
+        "Brilliant guest stars as sophisticated killers",
+        "Psychological depth in detective work",
+        "Timeless appeal across generations"
+      ]
+    },
+    "awards": [
+      {
+        "category": "Primetime Emmy Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Outstanding Lead Actor - Peter Falk (1972)"
+          },
+          {
+            "result": "Won",
+            "award": "Outstanding Limited Series (1974)"
+          },
+          {
+            "result": "Won",
+            "award": "Outstanding Writing (1974, 1975)"
+          },
+          {
+            "result": "Nominated",
+            "award": "13 additional Emmy nominations"
+          }
+        ]
+      },
+      {
+        "category": "Golden Globe Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best TV Actor - Peter Falk (1973)"
+          },
+          {
+            "result": "Won",
+            "award": "Best Supporting Actor - John Cassavetes"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Television Series"
+          }
+        ]
+      },
+      {
+        "category": "Edgar Allan Poe Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Episode (\"Death Lends a Hand\")"
+          },
+          {
+            "result": "Won",
+            "award": "Best Episode (\"Blueprint for Murder\")"
+          },
+          {
+            "result": "Nominated",
+            "award": "Multiple additional nominations"
+          }
+        ]
+      }
+    ],
+    "cast": {
+      "creator": {
+        "name": "Richard Levinson & William Link",
+        "link": "/DirectorReviews/richardlevinson+willaimlink.html",
+        "image": "/assets/focusimages/richardlevinson+willaimlink.png",
+        "roles": "Creators, Writers"
+      },
+      "main": [
+        {
+          "name": "Peter Falk",
+          "character": "Lieutenant Columbo",
+          "link": "/actorreviews/peterfalk.html",
+          "image": "/assets/focusimages/peterfalk.png"
+        }
+      ],
+      "supporting": [
+        "Vito Scotti (appeared in 7 episodes as various characters)",
+        "Mike Lally (appeared in 22 episodes as various background characters)",
+        "Bruce Kirby (appeared in 6 episodes as Sergeant Kramer)",
+        "John Finnegan (appeared in 5 episodes as Detective)",
+        "Shera Danese (appeared in 6 episodes, married to Peter Falk)",
+        "Jack Cassidy (4 episodes as different killers)",
+        "Patrick McGoohan (4 episodes, also directed episodes)",
+        "Robert Culp (3 episodes as different killers)",
+        "William Shatner (2 episodes as different killers)",
+        "Leonard Nimoy (2 episodes as different killers)"
+      ]
+    },
+    "production": {
+      "original_release": "February 20, 1968",
+      "parts": null,
+      "episodes": "69 Episodes",
+      "locations": "Los Angeles, California",
+      "companies": "Universal Television",
+      "language": null
+    },
+    "making_of": {
+      "paragraphs": [
+        "The creation of Columbobegan with writers Richard Levinson and William Link, who first introduced the character in a 1960 episode of \"The Chevy Mystery Show\" and later in the 1962 play \"Prescription: Murder.\" The character was inspired by Porfiry Petrovich from Dostoevsky's \"Crime and Punishment\" and the detective stories of G.K. Chesterton.",
+        "The iconic character almost wasn't played by Peter Falk. The network initially wanted Bing Crosby for the role, but Crosby declined. Falk, who was initially hesitant about television commitment, eventually accepted after being convinced by the quality of the writing and the uniqueness of the character.",
+        "Columbo's distinctive lookwas largely Peter Falk's creation. The rumpled raincoat was Falk's own, purchased for $15 at a New York department store. The Peugeot 403 convertible became as iconic as the character himself, representing Columbo's everyman quality amidst the wealthy environments he often investigated.",
+        "The series pioneered the \"inverted mystery\" format, showing the murder at the beginning and focusing on the cat-and-mouse game between Columbo and the killer. This structure allowed for deeper character development and psychological complexity, as audiences understood both the detective's methods and the killer's motivations.",
+        "The famous \"just one more thing\"catchphrase was reportedly ad-libbed by Falk during early filming. The directors recognized its effectiveness in disarming both the suspects and the audience, and it became a signature element of Columbo's deceptive, methodical interrogation style."
+      ],
+      "highlights": [
+        "Pioneered the inverted mystery format",
+        "Peter Falk's $15 raincoat became iconic",
+        "Peugeot 403 became synonymous with character",
+        "\"Just one more thing\" was ad-libbed",
+        "Inspired by classic literary detectives",
+        "Revolutionary character-driven mystery format"
+      ]
+    },
+    "suggestions": [
+      {
+        "title": "Monk",
+        "link": "/seriesreviews/monkmysteries.html",
+        "image": "/assets/seriesimages/monkmysteries.png"
+      },
+      {
+        "title": "Murder, She Wrote",
+        "link": "/seriesreviews/murdershewrote.html",
+        "image": "/assets/seriesimages/murdershewrote.png"
+      },
+      {
+        "title": "Poirot",
+        "link": "/seriesreviews/poirot.html",
+        "image": "/assets/seriesimages/poirot.png"
+      },
+      {
+        "title": "McMillions",
+        "link": "/seriesreviews/mcnmillions.html",
+        "image": "/assets/seriesimages/mcnmillions.png"
+      },
+      {
+        "title": "Psych",
+        "link": "/seriesreviews/psych.html",
+        "image": "/assets/seriesimages/psych.png"
+      }
+    ],
+    "additional_info": {
+      "fun_facts": [
+        "Peter Falk's eye was artificial - he lost his real eye to cancer at age three",
+        "Columbo's first name was never revealed in the series",
+        "The character smoked cigars because Falk himself was a cigar smoker",
+        "Columbo's wife was frequently mentioned but never seen",
+        "The raincoat was so iconic it's displayed in the Smithsonian Institution"
+      ],
+      "cultural_impact": [
+        "Pioneered the \"howcatchem\" mystery genre",
+        "Influenced countless detective series worldwide",
+        "Academic studies analyze Columbo's interrogation techniques",
+        "Referenced in numerous other TV shows and films",
+        "Remains in syndication globally decades after production"
+      ],
+      "related": []
+    }
+  },
+  "moneyheist": {
+    "title": "Money Heist (La Casa de Papel) (2017-2021)",
+    "genre": "Crime, Drama, Thriller",
+    "seasons": "5",
+    "network": "Netflix",
+    "description": "A Spanish heist crime drama that follows a mysterious man known as \"The Professor\" who recruits eight criminals with city names to carry out an ambitious plan: printing billions of euros in the Royal Mint of Spain and later executing a heist on the Bank of Spain. The series explores themes of resistance, love, and the blurred lines between criminals and heroes.",
+    "ratings": {
+      "imdb": "8.2/10",
+      "letterboxd": "3.8/5",
+      "rotten tomatoes": "94%",
+      "framedeer": "9.1/10"
+    },
+    "poster": "/assets/seriesimages/moneyheist.png",
+    "trailer": "https://www.youtube.com/embed/_InqQJRqGW4",
+    "thoughts": {
+      "paragraphs": [
+        "Money Heist became a global phenomenonthat transcended language barriers and cultural differences, proving that compelling storytelling knows no borders. What began as a Spanish television series quickly evolved into Netflix's most-watched non-English language show, captivating audiences worldwide with its high-stakes heists and complex characters.",
+        "The series' brilliance lies in its perfect blend of intellectual strategy and raw human emotion. Álvaro Morte's portrayal of The Professor—a brilliant, socially awkward mastermind—anchors the series with quiet intensity, while Úrsula Corberó's Tokyo provides the fiery, unpredictable energy that keeps viewers on edge. Each character, from the hot-headed Berlin to the maternal Nairobi, brings unique depth to the ensemble.",
+        "The series' visual identityis instantly recognizable: the red jumpsuits and Salvador Dalí masks became cultural icons, symbolizing resistance and rebellion. This distinctive aesthetic, combined with the hauntingly beautiful \"Bella Ciao\" theme song, created a powerful visual and auditory signature that resonated globally.",
+        "What sets Money Heist apart is its ability to constantly reinvent itself while maintaining narrative coherence. The transition from the Royal Mint heist to the Bank of Spain demonstrated the writers' skill at escalating stakes without losing the core themes of resistance, love, and the moral ambiguity of their anti-hero protagonists.",
+        "The series masterfully explores the psychology of its characters, delving into their motivations, traumas, and relationships. The romantic subplots, particularly between The Professor and Inspector Raquel, add emotional weight to the high-stakes thriller elements, creating a perfect balance between heart-pounding action and heartfelt drama.",
+        "Final verdict:A groundbreaking series that redefined global television consumption. Money Heist combines brilliant storytelling, memorable characters, and social commentary into an addictive package that keeps viewers invested from the first episode to the last."
+      ],
+      "highlights": [
+        "Iconic visual identity with red jumpsuits and Dalí masks",
+        "Complex, well-developed ensemble cast",
+        "Brilliant heist strategies and plot twists",
+        "Perfect balance of action and emotional depth",
+        "Global cultural phenomenon",
+        "Memorable soundtrack featuring \"Bella Ciao\""
+      ]
+    },
+    "awards": [
+      {
+        "category": "International Emmy Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Drama Series"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Performance by an Actor"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Performance by an Actress"
+          }
+        ]
+      },
+      {
+        "category": "Feroz Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Drama Series"
+          },
+          {
+            "result": "Won",
+            "award": "Best Actor - Álvaro Morte"
+          },
+          {
+            "result": "Won",
+            "award": "Best Actress - Úrsula Corberó"
+          },
+          {
+            "result": "Won",
+            "award": "Best Supporting Actor - Pedro Alonso"
+          }
+        ]
+      },
+      {
+        "category": "Spanish Actors Union Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Television Actor"
+          },
+          {
+            "result": "Won",
+            "award": "Best Television Actress"
+          },
+          {
+            "result": "Won",
+            "award": "Best Supporting Actor"
+          },
+          {
+            "result": "Won",
+            "award": "Best Supporting Actress"
+          }
+        ]
+      }
+    ],
+    "cast": {
+      "creator": {
+        "name": "Álex Pina",
+        "link": "/DirectorReviews/alexpina.html",
+        "image": "/assets/focusimages/alexpina.png",
+        "roles": "Creator, Writer, Executive Producer"
+      },
+      "main": [
+        {
+          "name": "Álvaro Morte",
+          "character": "Sergio Marquina (The Professor)",
+          "link": "/actorreviews/alvaromorte.html",
+          "image": "/assets/focusimages/alvaromorte.png"
+        },
+        {
+          "name": "Úrsula Corberó",
+          "character": "Silene Oliveira (Tokyo)",
+          "link": "/actorreviews/ursulacorbero.html",
+          "image": "/assets/focusimages/ursulacorbero.png"
+        },
+        {
+          "name": "Pedro Alonso",
+          "character": "Andrés de Fonollosa (Berlin)",
+          "link": "/actorreviews/pedroalonso.html",
+          "image": "/assets/focusimages/pedroalonso.png"
+        },
+        {
+          "name": "Itziar Ituño",
+          "character": "Raquel Murillo (Lisbon)",
+          "link": "/actorreviews/itziarituno.html",
+          "image": "/assets/focusimages/itziarituno.png"
+        },
+        {
+          "name": "Alba Flores",
+          "character": "Ágata Jiménez (Nairobi)",
+          "link": "/actorreviews/albafllores.html",
+          "image": "/assets/focusimages/albaflores.png"
+        },
+        {
+          "name": "Miguel Herrán",
+          "character": "Aníbal Cortés (Rio)",
+          "link": "/actorreviews/miguelherran.html",
+          "image": "/assets/focusimages/miguelherran.png"
+        }
+      ],
+      "supporting": [
+        "Jaime Lorente as Denver",
+        "Esther Acebo as Stockholm",
+        "Darko Perić as Helsinki",
+        "Hovik Keuchkerian as Bogotá",
+        "Luka Peroš as Marseille",
+        "Belén Cuesta as Manila",
+        "Najwa Nimri as Inspector Sierra",
+        "Rodrigo de la Serna as Palermo"
+      ]
+    },
+    "production": {
+      "original_release": "May 2, 2017",
+      "parts": "5 Parts",
+      "episodes": "41 Episodes",
+      "locations": "Madrid, Spain",
+      "companies": "Netflix, Vancouver Media",
+      "language": "Spanish"
+    },
+    "making_of": {
+      "paragraphs": [
+        "Álex Pina's visionfor Money Heist began as an ambitious project to create a Spanish series that could compete with international productions. The creator drew inspiration from classic heist films, political resistance movements, and the economic crisis in Spain to craft a story that would resonate globally.",
+        "The series' distinctive visual identity was carefully crafted to create an iconic look. The red jumpsuits were chosen to represent the color of resistance and revolution, while the Salvador Dalí masks were selected for their surreal, artistic quality that would make the characters instantly recognizable and mysterious.",
+        "The casting processfocused on finding actors who could bring depth to their code-named characters. Álvaro Morte's portrayal of The Professor became the intellectual anchor of the series, while Úrsula Corberó's Tokyo provided the emotional core. The ensemble cast developed remarkable chemistry, with many actors becoming close friends off-screen.",
+        "The series' global success was unexpected but transformative. Originally airing on Spanish network Antena 3 with moderate success, Netflix acquired global rights and re-edited the series into shorter parts, creating the binge-watching phenomenon that would become one of the platform's most-watched non-English shows.",
+        "The production faced numerous challenges, including complex action sequences, intricate heist mechanics, and emotional character arcs. The writers constantly evolved the story based on audience reactions and character development, creating a dynamic narrative that kept viewers engaged across five parts."
+      ],
+      "highlights": [
+        "Iconic red jumpsuits and Dalí mask design",
+        "Global phenomenon after Netflix acquisition",
+        "Complex heist mechanics and strategies",
+        "Emotional character development arcs",
+        "International filming locations",
+        "Cultural impact and fan engagement"
+      ]
+    },
+    "suggestions": [
+      {
+        "title": "Berlin",
+        "link": "/seriesreviews/berlin.html",
+        "image": "/assets/seriesimages/berlin.png"
+      },
+      {
+        "title": "Lupin",
+        "link": "/seriesreviews/lupin.html",
+        "image": "/assets/seriesimages/lupin.png"
+      },
+      {
+        "title": "White Lines",
+        "link": "/seriesreviews/whitelines.html",
+        "image": "/assets/seriesimages/whitelines.png"
+      },
+      {
+        "title": "Elite",
+        "link": "/seriesreviews/elite.html",
+        "image": "/assets/seriesimages/elite.png"
+      },
+      {
+        "title": "Vis a Vis",
+        "link": "/seriesreviews/visavis.html",
+        "image": "/assets/seriesimages/visavis.png"
+      }
+    ],
+    "additional_info": {
+      "fun_facts": [
+        "The red jumpsuits were inspired by workers' uniforms and revolutionary imagery",
+        "\"Bella Ciao\" became an anti-fascist anthem and global hit because of the series",
+        "The Professor's glasses became a popular fashion item worldwide",
+        "Netflix initially rejected the series before reconsidering and making it a global hit",
+        "The cast became international stars and developed close friendships"
+      ],
+      "cultural_impact": [
+        "Became Netflix's most-watched non-English series",
+        "Revived interest in Spanish television globally",
+        "\"Bella Ciao\" became a protest anthem worldwide",
+        "Inspired real-life protests and political movements",
+        "Created a global fan community and merchandise empire"
+      ],
+      "related": [
+        "Berlin (2023) - Prequel series focusing on Berlin's earlier heists",
+        "Money Heist: From Tokyo to Berlin - Documentary series",
+        "Money Heist: The Phenomenon - Behind-the-scenes documentary",
+        "Various international adaptations in development",
+        "Video game and mobile app releases"
+      ]
+    }
+  },
+  "truedetective": {
+    "title": "True Detective (2014-)",
+    "genre": "Crime, Drama, Mystery",
+    "seasons": "4",
+    "network": "HBO",
+    "description": "An anthology crime drama series that focuses on troubled detectives and their investigations, which often have personal and metaphysical ramifications. Each season features a new cast, setting, and storyline, exploring complex characters and intricate criminal cases that span decades. The series is known for its philosophical themes, atmospheric direction, and powerhouse performances.",
+    "ratings": {
+      "imdb": "8.9/10",
+      "letterboxd": "4.2/5",
+      "rotten tomatoes": "91%",
+      "framedeer": "9.2/10"
+    },
+    "poster": "/assets/seriesimages/truedetective.png",
+    "trailer": "https://www.youtube.com/watch?v=fVQUcaO4AvE&pp=ygUoVHJ1ZSBEZXRlY3RpdmUgU2Vhc29uIDEgT2ZmaWNpYWwgVHJhaWxlcg%3D%3D",
+    "thoughts": {
+      "paragraphs": [
+        "True Detective redefinedwhat television crime drama could achieve, blending philosophical depth with gripping mystery. The series' anthology format allows each season to tell a complete, self-contained story while maintaining the core themes of existential dread, moral ambiguity, and the nature of evil.",
+        "Season 1 stands as one of the greatest achievements in television history, featuring career-best performances from Matthew McConaughey and Woody Harrelson. McConaughey's portrayal of Rust Cohle—a nihilistic, philosophically tortured detective—is nothing short of mesmerizing, while Harrelson provides the perfect counterbalance as the more conventional but deeply flawed Marty Hart.",
+        "The series' visual languageis equally remarkable, with Cary Joji Fukunaga's direction in Season 1 creating an atmosphere of palpable dread and Southern Gothic horror. The now-legendary six-minute single-take tracking shot in Episode 4 remains one of the most technically impressive sequences ever filmed for television.",
+        "What sets True Detective apart is its willingness to explore complex philosophical ideas while never losing sight of its central mystery. The series delves into themes of time, consciousness, religion, and the nature of reality, all while maintaining the tension of a classic whodunit.",
+        "Subsequent seasons, while not reaching the same cultural peak as the first, have continued to deliver compelling stories with stellar casts. Each season explores different facets of the detective genre while maintaining the series' signature atmospheric tension and character depth.",
+        "Final verdict:A landmark television series that elevates the crime drama to high art. Essential viewing for anyone interested in masterful storytelling, complex characters, and philosophical depth."
+      ],
+      "highlights": [
+        "Matthew McConaughey's career-defining performance",
+        "Revolutionary single-take action sequences",
+        "Philosophical depth and existential themes",
+        "Atmospheric Southern Gothic setting",
+        "Anthology format with fresh stories each season",
+        "Masterful direction and cinematography"
+      ]
+    },
+    "awards": [
+      {
+        "category": "Primetime Emmy Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Outstanding Directing - Cary Joji Fukunaga"
+          },
+          {
+            "result": "Won",
+            "award": "Outstanding Cinematography"
+          },
+          {
+            "result": "Won",
+            "award": "Outstanding Main Title Design"
+          },
+          {
+            "result": "Nominated",
+            "award": "Outstanding Limited Series"
+          },
+          {
+            "result": "Nominated",
+            "award": "Outstanding Lead Actor - Matthew McConaughey"
+          },
+          {
+            "result": "Nominated",
+            "award": "Outstanding Lead Actor - Woody Harrelson"
+          },
+          {
+            "result": "Nominated",
+            "award": "Outstanding Writing"
+          }
+        ]
+      },
+      {
+        "category": "Golden Globe Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Actor - Matthew McConaughey"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Miniseries or Television Film"
+          },
+          {
+            "result": "Nominated",
+            "award": "Best Supporting Actor - Woody Harrelson"
+          }
+        ]
+      },
+      {
+        "category": "Critics Choice Awards",
+        "items": [
+          {
+            "result": "Won",
+            "award": "Best Movie/Miniseries"
+          },
+          {
+            "result": "Won",
+            "award": "Best Actor - Matthew McConaughey"
+          },
+          {
+            "result": "Won",
+            "award": "Best Supporting Actor - Woody Harrelson"
+          },
+          {
+            "result": "Won",
+            "award": "Best Directing"
+          }
+        ]
+      }
+    ],
+    "cast": {
+      "creator": {
+        "name": "Nic Pizzolatto",
+        "link": "/DirectorReviews/nicpizzolatto.html",
+        "image": "/assets/focusimages/nicpizzolatto.png",
+        "roles": "Creator, Writer, Executive Producer"
+      },
+      "main": [
+        {
+          "name": "Matthew McConaughey",
+          "character": "Rustin \"Rust\" Cohle",
+          "link": "/actorreviews/matthewmcconaughey.html",
+          "image": "/assets/focusimages/matthewmcconaughey.png"
+        },
+        {
+          "name": "Woody Harrelson",
+          "character": "Martin \"Marty\" Hart",
+          "link": "/actorreviews/woodyharrelson.html",
+          "image": "/assets/focusimages/woodyharrelson.png"
+        },
+        {
+          "name": "Michelle Monaghan",
+          "character": "Maggie Hart",
+          "link": "/actorreviews/michellemonaghan.html",
+          "image": "/assets/focusimages/michellemonaghan.png"
+        },
+        {
+          "name": "Michael Lee Chan",
+          "character": "Maynard Gilbough",
+          "link": "/actorreviews/michaelleechan.html",
+          "image": "/assets/focusimages/michaelleechan.png"
+        },
+        {
+          "name": "Tory Kittles",
+          "character": "Thomas Papania",
+          "link": "/actorreviews/torykittles.html",
+          "image": "/assets/focusimages/torykittles.png"
+        },
+        {
+          "name": "Jodhi Purcell",
+          "character": "Laurie Perkins",
+          "link": "/actorreviews/jodhpur.html",
+          "image": "/assets/focusimages/jodhpur.png"
+        }
+      ],
+      "supporting": [
+        "Alexandra Daddario as Lisa Tragnetti",
+        "Kevin Dunn as Ken Quesada",
+        "Brad Carter as Charlie Lange",
+        "Dana Gourrier as Cathleen",
+        "Madison Wolfe as Audrey Hart (young)",
+        "Erin Moriarty as Audrey Hart (older)"
+      ]
+    },
+    "production": {
+      "original_release": "January 12, 2014",
+      "parts": null,
+      "episodes": "30 Episodes",
+      "locations": "Louisiana, California",
+      "companies": "HBO, Anonymous Content",
+      "language": "English"
+    },
+    "making_of": {
+      "paragraphs": [
+        "Nic Pizzolatto's visionfor True Detective began as a novel before being developed as a television series. The writer drew inspiration from Southern Gothic literature, weird fiction, and philosophical texts to create a crime drama that would explore deeper existential questions.",
+        "Season 1's production became legendary for its innovative approach. Director Cary Joji Fukunaga shot all eight episodes himself, creating a cohesive visual style that contributed significantly to the season's atmospheric quality. The now-famous six-minute single-take sequence in \"Who Goes There\" required extensive planning and rehearsal, with Matthew McConaughey and the crew executing the complex shot flawlessly.",
+        "The casting of McConaughey and Harrelsonwas a stroke of genius, with the real-life friends bringing authentic chemistry to their roles. McConaughey's preparation included developing Rust Cohle's philosophical worldview, drawing from writers like Thomas Ligotti and Emil Cioran. Harrelson's portrayal of Marty Hart provided the necessary grounding to McConaughey's cosmic pessimism.",
+        "The series' anthology format allowed each season to explore different aspects of the detective genre while maintaining the core themes of obsession, time, and the nature of evil. This approach has enabled the series to attract major talent for each new installment while keeping the storytelling fresh and innovative."
+      ],
+      "highlights": [
+        "Single director for entire first season",
+        "Legendary six-minute single-take shot",
+        "Anthology format with rotating cast",
+        "Southern Gothic atmosphere and setting",
+        "Philosophical and literary influences",
+        "Atmospheric cinematography and score"
+      ]
+    },
+    "suggestions": [
+      {
+        "title": "Mindhunter",
+        "link": "/seriesreviews/mindhunter.html",
+        "image": "/assets/seriesimages/mindhunter.png"
+      },
+      {
+        "title": "The Killing",
+        "link": "/seriesreviews/thekilling.html",
+        "image": "/assets/seriesimages/thekilling.png"
+      },
+      {
+        "title": "Broadchurch",
+        "link": "/seriesreviews/broadchurch.html",
+        "image": "/assets/seriesimages/broadchurch.png"
+      },
+      {
+        "title": "The Sinner",
+        "link": "/seriesreviews/thesinner.html",
+        "image": "/assets/seriesimages/thesinner.png"
+      },
+      {
+        "title": "Fargo",
+        "link": "/seriesreviews/fargo.html",
+        "image": "/assets/seriesimages/fargo.png"
+      }
+    ],
+    "additional_info": {
+      "fun_facts": [
+        "Matthew McConaughey and Woody Harrelson are real-life friends who vacation together",
+        "The famous single-take shot required 7 minutes of continuous filming",
+        "Nic Pizzolatto wrote all episodes of the first two seasons himself",
+        "The series was originally conceived as a novel before being adapted for television",
+        "Season 1's ending was rewritten multiple times during production"
+      ],
+      "cultural_impact": [
+        "Revived interest in philosophical crime fiction",
+        "Inspired countless fan theories and analysis videos",
+        "Set new standards for television cinematography",
+        "Popularized the anthology format for crime dramas",
+        "Became a cultural touchstone for television excellence"
+      ],
+      "related": []
+    }
+  },
+  "adolescence": {
+    "title": "Adolescence",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/adolescence.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "andor": {
+    "title": "Andor",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/andor.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "becoolscoobydoo": {
+    "title": "Becoolscoobydoo",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/becoolscoobydoo.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "bettercallsaul": {
+    "title": "Bettercallsaul",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/bettercallsaul.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "blackmirror": {
+    "title": "Blackmirror",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/blackmirror.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "breakingbad": {
+    "title": "Breakingbad",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/breakingbad.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "chernobyl": {
+    "title": "Chernobyl",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/chernobyl.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "chillingadventuresofsabrina": {
+    "title": "Chillingadventuresofsabrina",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/chillingadventuresofsabrina.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "deathnote": {
+    "title": "Deathnote",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/deathnote.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "friends": {
+    "title": "Friends",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/friends.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "from": {
+    "title": "From",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/from.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "gilmoregirls": {
+    "title": "Gilmoregirls",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/gilmoregirls.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "heartbreakhigh": {
+    "title": "Heartbreakhigh",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/heartbreakhigh.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "kungfupandaseries": {
+    "title": "Kungfupandaseries",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/kungfupandaseries.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "lucifer": {
+    "title": "Lucifer",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/lucifer.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "mriglesias": {
+    "title": "Mriglesias",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/mriglesias.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "raisingdion": {
+    "title": "Raisingdion",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/raisingdion.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "scoobydoo": {
+    "title": "Scoobydoo",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/scoobydoo.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "scoobydoomysteryincorporated": {
+    "title": "Scoobydoomysteryincorporated",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/scoobydoomysteryincorporated.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "strangerthings": {
+    "title": "Strangerthings",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/strangerthings.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "suits": {
+    "title": "Suits",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/suits.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  
+  "tedlasso": {
+    "title": "Tedlasso",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/tedlasso.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "thebadbatch": {
+    "title": "Thebadbatch",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/thebadbatch.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "thebigbangtheory": {
+    "title": "Thebigbangtheory",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/thebigbangtheory.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "thelastofus": {
+    "title": "Thelastofus",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/thelastofus.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "themandalorian": {
+    "title": "Themandalorian",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/themandalorian.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "thepinkpanther": {
+    "title": "Thepinkpanther",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/thepinkpanther.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "tomandjerry": {
+    "title": "Tomandjerry",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/tomandjerry.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  
+  "webarebears": {
+    "title": "Webarebears",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/webarebears.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "whatsnewscoobydoo": {
+    "title": "Whatsnewscoobydoo",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/whatsnewscoobydoo.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  },
+  "you": {
+    "title": "You",
+    "genre": "",
+    "seasons": "",
+    "network": "",
+    "description": "",
+    "ratings": {
+      "framedeer": "1/10"
+    },
+    "poster": "/assets/seriesimages/you.png",
+    "trailer": "",
+    "thoughts": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "awards": [],
+    "cast": {
+      "creator": {
+        "name": "",
+        "link": "",
+        "image": "",
+        "roles": ""
+      },
+      "main": [],
+      "supporting": []
+    },
+    "production": {
+      "original_release": "",
+      "parts": "",
+      "episodes": "",
+      "locations": "",
+      "companies": "",
+      "language": ""
+    },
+    "making_of": {
+      "paragraphs": [],
+      "highlights": []
+    },
+    "suggestions": [],
+    "additional_info": {
+      "fun_facts": [],
+      "cultural_impact": [],
+      "related": []
+    }
+  }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NGJEB1784P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NGJEB1784P');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Series Detail</title>
+  <meta name="description" content="Browse FrameDeer's comprehensive TV series reviews collection. Filter by genre, search shows, and discover detailed analysis of television from classic to contemporary.">
+  <meta name="keywords" content="series reviews, TV show ratings, television analysis, series database, TV criticism, FrameDeer series">
+  <link rel="stylesheet" href="moviesreviews.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo-title-container">
+        <a href="/index.html" class="logo-link">
+          <img src="/assets/logo/framedeer.png" alt="FrameDeer Logo - Movie Reviews and Ratings" class="nav-logo-img">
+        </a>
+        <a href="/index.html" class="nav-logo">FrameDeer</a>
+      </div>  
+      
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/movies.html">Movies</a></li>
+        <li><a href="/series.html">Series</a></li>
+        <li><a href="/focus.html">Focus</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/tournament.html">Tournament</a></li>
+        <li><a href="/about.html">About</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+        <span class="menu-line menu-line-1"></span>
+        <span class="menu-line menu-line-2"></span>
+        <span class="menu-line menu-line-3"></span>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <button class="close-menu" id="closeMenuBtn" aria-label="Close mobile menu">
+    </button>
+    <ul class="mobile-nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/movies.html">Movies</a></li>
+      <li><a href="/series.html">Series</a></li>
+      <li><a href="/focus.html">Focus</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/tournament.html">Tournament</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+  </div>
+
+  <main class="container" style="padding: 1rem; max-width: 1100px; margin: 0 auto; margin-top: 2rem;">
+    <section id="headerSection" class="movie-header"></section>
+    <section id="trailerSection" class="trailer"></section>
+    <section id="thoughtsSection" class="framedeer-thoughts"></section>
+    <section id="awardsSection" class="awards"></section>
+    <section id="castSection" class="cast"></section>
+    <section id="productionSection" class="production-info"></section>
+    <section id="makingSection" class="making-of"></section>
+    <section id="suggestionsSection" class="movie-suggestions"></section>
+    <section id="additionalInfoSection" class="additional-info"></section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <!-- Social Media Section -->
+        <div class="footer-social">
+          <h4>Follow FrameDeer</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/framedeer" aria-label="Follow FrameDeer on Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/FrameDeer" aria-label="Follow FrameDeer on Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.youtube.com/@FrameDeer" aria-label="Follow FrameDeer on YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Simple Legal Links -->
+        <div class="footer-legal">
+          <a href="/Docs/DISCLAIMER.pdf">Disclaimer</a>
+          <span>•</span>
+          <a href="/Docs/PRIVACY POLICY DOCUMENT.pdf">Privacy</a>
+        </div>
+        
+        <!-- Attribution Section -->
+        <div class="footer-attribution">
+          <p>This site uses information from IMDb, Letterboxd, Wikipedia, and other public sources for educational purposes under Fair Use.</p>
+          <p>All trademarks belong to their respective owners. No copyright infringement intended.</p>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> FrameDeer - Use For Educational Purposes</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    function qs(sel, root=document){ return root.querySelector(sel); }
+    function qsa(sel, root=document){ return Array.from(root.querySelectorAll(sel)); }
+    function getParam(name){ return new URLSearchParams(location.search).get(name); }
+
+    function idFromPath(href){
+      if (!href) return null;
+      const m = href.match(/\/(?:ActorReviews|DirectorReviews|SeriesReviews)\/([^\/]+)\.html/i);
+      return m ? m[1] : null;
+    }
+
+    // Enhanced star rating system
+    function createPartialStarRating(containerId, rating) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      rating = Math.max(0, Math.min(10, rating));
+      for (let i = 1; i <= 10; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const starBackground = document.createElement('div');
+        starBackground.className = 'star-background';
+        starBackground.innerHTML = '<i class="fas fa-star"></i>';
+        const starFill = document.createElement('div');
+        starFill.className = 'star-fill';
+        starFill.innerHTML = '<i class="fas fa-star"></i>';
+        if (i <= Math.floor(rating)) {
+          starFill.style.width = '100%';
+        } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+          const percentage = (rating % 1) * 100;
+          starFill.style.width = percentage + '%';
+        } else {
+          starFill.style.width = '0%';
+        }
+        star.appendChild(starBackground);
+        star.appendChild(starFill);
+        container.appendChild(star);
+      }
+    }
+
+    function renderHeader(series, id){
+      const el = qs('#headerSection');
+      const creator = series.cast?.creator || {};
+      const creatorId = idFromPath(creator.link);
+      // Parse FrameDeer numeric rating from string like "8.6/10"
+      const fdStr = series.ratings?.framedeer || '';
+      const m = /(\d+(?:\.\d+)?)/.exec(fdStr);
+      const fdNum = m ? Math.max(0, Math.min(10, parseFloat(m[1]))) : null;
+      el.innerHTML = `
+        <div class="movie-header" style="display:flex; gap: 1.5rem; align-items:flex-start; flex-wrap: wrap;">
+
+          <div class="movie-details">
+            <h1>${series.title || ''}</h1>
+            <p><strong>Genre:</strong> ${series.genre || ''} | <strong>Seasons:</strong> ${series.seasons || ''} | <strong>Network:</strong> ${series.network || ''}</p>
+            <p class="description">${series.description || ''}</p>
+            <div class="ratings">
+              ${series.ratings?.imdb ? `<span><strong>IMDb:</strong> ${series.ratings.imdb}</span>` : ''}
+              ${series.ratings?.letterboxd ? `<span><strong>Letterboxd:</strong> ${series.ratings.letterboxd}</span>` : ''}
+              ${series.ratings?.["rotten"] || series.ratings?.["rotten tomatoes"] ? `<span><strong>Rotten Tomatoes:</strong> ${series.ratings["rotten"] || series.ratings["rotten tomatoes"]}</span>` : ''}
+             
+            </div>
+            ${fdNum !== null ? `
+            <div class="framedeer-rating">
+              <div class="rating-label">FrameDeer Rating</div>
+              <div id="stars-${id}" class="stars"></div>
+              <div class="rating-text">${fdNum.toFixed(1)}/10</div>
+            </div>` : ''}
+           
+          </div>
+        </div>
+                  <div class="movie-poster">
+            <img src="${series.poster || ''}" alt="${series.title || ''} poster" style="width:280px; max-width:100%; border-radius:8px;" />
+          </div>`;
+      if (fdNum !== null) {
+        createPartialStarRating(`stars-${id}`, fdNum);
+      }
+    }
+
+    function renderTrailer(series){
+      const el = qs('#trailerSection');
+      if (!series.trailer) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Official Trailer</h2>
+        <iframe width="100%" height="500" src="${series.trailer}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+    }
+
+    function renderThoughts(series){
+      const t = series.thoughts || {}; const ps = t.paragraphs || []; const hs = t.highlights || [];
+      const el = qs('#thoughtsSection');
+      if (!ps.length && !hs.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>FrameDeer Thoughts</h2>
+        <div class="thoughts-content" style="display:grid; grid-template-columns: 1fr 320px; gap: 1rem; align-items: start;">
+          <div class="thoughts-text">${ps.map(p=>`<p>${p}</p>`).join('')}</div>
+          <div class="thoughts-highlights">
+            <h3>Key Highlights</h3>
+            <ul>${hs.map(x=>`<li>${x}</li>`).join('')}</ul>
+          </div>
+        </div>`;
+    }
+
+    function renderAwards(series){
+      const groups = series.awards || [];
+      const el = qs('#awardsSection');
+      if (!groups.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Awards & Recognition</h2>
+        <div class="awards-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          ${groups.map(g=>`
+            <div class="award-category">
+              <h3>${g.category || ''}</h3>
+              <ul>
+                ${(g.items||[]).map(i=>`<li><span class="award-result">${i.result || ''}</span> ${i.award || ''}</li>`).join('')}
+              </ul>
+            </div>`).join('')}
+        </div>`;
+    }
+
+    function renderCast(series){
+      const cast = series.cast || {}; const main = cast.main || []; const supporting = cast.supporting || [];
+      const el = qs('#castSection');
+      // Build Creator block
+      const creator = cast.creator || {};
+      const creatorId = idFromPath(creator.link);
+      const creatorHref = creatorId ? `directordetail.html?id=${encodeURIComponent(creatorId)}` : (creator.link || '#');
+      const creatorBlock = (creator && (creator.name || creator.image || creator.link)) ? `
+        <div class="cast-category">
+          <h3>Creator</h3>
+          <div class="director">
+            ${creator.image ? `<a href="${creatorHref}"><img src="${creator.image}" alt="${creator.name ? creator.name+' - Creator' : 'Creator'}"></a>` : ''}
+            <div class="director-info">
+              ${creator.name ? `<h4>${creatorId ? `<a href="${creatorHref}">${creator.name}</a>` : creator.name}</h4>` : ''}
+              <p>Creator</p>
+            </div>
+          </div>
+        </div>` : '';
+      if (!main.length && !supporting.length && !creatorBlock) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Cast & Crew</h2>
+        ${creatorBlock}
+        <div class="cast-category">
+          <h3>Main Cast</h3>
+          <div class="main-cast-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;">
+            ${main.map(m=>{
+              const actorId = idFromPath(m.link);
+              const link = actorId ? `actordetail.html?id=${encodeURIComponent(actorId)}` : (m.link || '#');
+              return `<div class=\"cast-member\" style=\"text-align:center;\"> 
+                <a href=\"${link}\">
+                  ${m.image ? `<img src=\"${m.image}\" alt=\"${m.name || ''}\" style=\"width:120px; height:120px; object-fit:cover; border-radius:8px;\" />` : ''}
+                  <p>${m.name || ''}</p>
+                  ${m.character ? `<p class=\"character\">${m.character}</p>` : ''}
+                </a>
+              </div>`;
+            }).join('')}
+          </div>
+        </div>
+        ${supporting.length ? `<div class=\"cast-category\"><h3>Supporting Cast</h3><ul class=\"other-cast\">${supporting.map(d=>`<li>${d}</li>`).join('')}</ul></div>` : ''}
+      `;
+    }
+
+    function renderProduction(series){
+      const p = series.production || {};
+      const el = qs('#productionSection');
+      const rows = [
+        ['Original Release', p.original_release],
+        ['Parts', p.parts],
+        ['Episodes', p.episodes],
+        ['Filming Locations', p.locations],
+        ['Production Companies', p.companies],
+        ['Original Language', p.language],
+      ].filter(r=>r[1]);
+      if (!rows.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Production & Information</h2>
+        <div class="info-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+          ${rows.map(([k,v])=>`<div class="info-item"><h3>${k}</h3><p class="info-value">${v}</p></div>`).join('')}
+        </div>`;
+    }
+
+    function renderMaking(series){
+      const m = series.making_of || {}; const ps = m.paragraphs || []; const hs = m.highlights || [];
+      const el = qs('#makingSection');
+      if (!ps.length && !hs.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>The Making of</h2>
+        <div class="making-content" style="display:grid; grid-template-columns: 1fr 320px; gap: 1rem; align-items: start;">
+          <div class="making-text">${ps.map(p=>`<p>${p}</p>`).join('')}</div>
+          <div class="making-highlights"><h3>Production Highlights</h3><ul>${hs.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        </div>`;
+    }
+
+    function renderSuggestions(series){
+      const s = series.suggestions || [];
+      const el = qs('#suggestionsSection');
+      if (!s.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Series Suggestions</h2>
+        <div class="suggestions-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+          ${s.map(item=>{
+            const id = idFromPath(item.link);
+            const href = id ? `seriesdetail.html?id=${encodeURIComponent(id)}` : (item.link || '#');
+            return `<div class=\"suggestion-item\" style=\"text-align:center;\"><a href=\"${href}\" style=\"display:block;\"><img src=\"${item.image || ''}\" alt=\"${item.title || ''}\" style=\"width:100%; aspect-ratio: 2 / 3; object-fit: cover; border-radius:8px;\"><p style=\"margin-top:0.5rem;\">${item.title || ''}</p></a></div>`
+          }).join('')}
+        </div>`;
+    }
+
+    function renderAdditional(series){
+      const add = series.additional_info || {}; const fun = add.fun_facts || []; const culture = add.cultural_impact || []; const related = add.related || [];
+      const el = qs('#additionalInfoSection');
+      if (!fun.length && !culture.length && !related.length) { el.innerHTML = ''; return; }
+      el.innerHTML = `
+        <h2>Additional Information</h2>
+        <div class="info-sections" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+          ${fun.length ? `<div class=\"info-section\"><h3>Fun Facts & Trivia</h3><ul>${fun.map(x=>`<li>${x}</li>`).join('')}</ul></div>` : ''}
+          ${culture.length ? `<div class=\"info-section\"><h3>Cultural Impact</h3><ul>${culture.map(x=>`<li>${x}</li>`).join('')}</ul></div>` : ''}
+          ${related.length ? `<div class=\"info-section\"><h3>Spin-offs & Related Content</h3><ul>${related.map(x=>`<li>${x}</li>`).join('')}</ul></div>` : ''}
+        </div>`;
+    }
+
+    async function main(){
+      const id = getParam('id');
+      if (!id){ qs('#headerSection').innerHTML = '<p class="error">Missing series id.</p>'; return; }
+      if (location.protocol === 'file:') {
+        qs('#headerSection').innerHTML = '<p class="error">This page loads data via fetch. Please run a local server (e.g., <code>python3 -m http.server 5500</code>) and open <code>http://localhost:5500/seriesdetail.html?id='+id+'</code>.</p>';
+        return;
+      }
+      try {
+        const res = await fetch(new URL('series.json', location.href));
+        if (!res.ok) throw new Error('series.json HTTP '+res.status);
+        const data = await res.json();
+        const series = data[id];
+        if (!series){ qs('#headerSection').innerHTML = '<p class="error">Series not found for id: '+id+'</p>'; return; }
+        renderHeader(series, id);
+        renderTrailer(series);
+        renderThoughts(series);
+        renderAwards(series);
+        renderCast(series);
+        renderProduction(series);
+        renderMaking(series);
+        renderSuggestions(series);
+        renderAdditional(series);
+      } catch (e){
+        qs('#headerSection').innerHTML = '<p class="error">Failed to load series details. '+(e && e.message ? e.message : '')+'</p>';
+        console.error(e);
+      }
+    }
+
+    main();
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+    function toggleMobileMenu() {
+      const isActive = mobileMenuOverlay.classList.contains('active');
+      if (isActive) {
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        mobileMenuOverlay.classList.add('active');
+        mobileMenuBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closeMobileMenu() {
+      mobileMenuOverlay.classList.remove('active');
+      mobileMenuBtn.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+    mobileNavLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+  </script>
+</body>
+</html>
